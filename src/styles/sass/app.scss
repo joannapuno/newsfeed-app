@@ -166,6 +166,7 @@ header {
     @include position(fixed,unset,0,0,0);
     box-shadow: 0 -4px 5px 0 #cacaca;
     padding: 10px 20px;
+    transition: .2s ease-in;
 
     .nav-add-post {
         position: relative;
@@ -189,12 +190,21 @@ header {
     }
 }
 
+#bottom-nav.hide {
+    transition: 0.2s ease-in;
+    transform: translateY(100%);
+}
+
 
 ///////NEW POST///////
 #new-post-container {
-    opacity: 0;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
     transition: 0.2s ease-in;
-
+    transform: translateY(100%);
+    
     .new-post-content {
         background: #f1f1f1;
         min-height: 130px;
@@ -225,9 +235,11 @@ header {
     }
 }
 
-.new-post-container.show {
-    opacity: 1;
+#new-post-container.show {
+    transform: translateY(0);
+    transition: .2s ease-in;
 }
+
 ///////NO CONTENT///////
 #no-posts-view {
     display: grid;

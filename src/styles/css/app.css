@@ -147,6 +147,7 @@ header #top-nav .side-drawer-toggle div {
   left: 0;
   box-shadow: 0 -4px 5px 0 #cacaca;
   padding: 10px 20px;
+  transition: 0.2s ease-in;
 }
 #bottom-nav .nav-add-post {
   position: relative;
@@ -168,9 +169,18 @@ header #top-nav .side-drawer-toggle div {
   width: 55px;
 }
 
-#new-post-container {
-  opacity: 0;
+#bottom-nav.hide {
   transition: 0.2s ease-in;
+  transform: translateY(100%);
+}
+
+#new-post-container {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  transition: 0.2s ease-in;
+  transform: translateY(100%);
 }
 #new-post-container .new-post-content {
   background: #f1f1f1;
@@ -195,8 +205,9 @@ header #top-nav .side-drawer-toggle div {
   justify-self: end;
 }
 
-.new-post-container.show {
-  opacity: 1;
+#new-post-container.show {
+  transform: translateY(0);
+  transition: 0.2s ease-in;
 }
 
 #no-posts-view {
