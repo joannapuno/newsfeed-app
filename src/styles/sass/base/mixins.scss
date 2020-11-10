@@ -1,0 +1,40 @@
+// General Mixins
+@mixin position($position, $top, $right, $bottom: unset, $left: unset){
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin grid($direction: false, $values: false, $gridArea: false, $gap: 0) {
+    display: grid;
+    grid-gap: $gap;
+
+    @if($direction and $values) {
+        #{$direction}: $values;
+    }
+
+    @if($gridArea){
+        grid-area: $gridArea;
+    }
+}
+
+
+//Specific Component Mixins
+@mixin nav($cols, $height, $bgColor) {
+    @include grid(grid-template-columns, $cols);
+    
+    background: $bgColor;
+    height: $height;
+}
+
+@mixin addPostBtn($bgColor, $color, $fontSize: 16px) {
+    background: $bgColor;
+    color: $color;
+    font-size: $fontSize;
+}
+
+@mixin nav-icon() {
+    
+}

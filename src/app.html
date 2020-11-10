@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsfeed app</title>
+    <link rel="stylesheet" href="../src/styles/css/app.css">
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <!--Top Nav-->
+        <header>
+            <div id="top-nav">
+                <div class="side-drawer-toggle">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+
+                <div id="app-logo">
+                    <div>Logo</div>
+                </div>
+
+                <div class="app-user nav-icon">
+                    <div>User</div>
+                </div>
+            </div>
+        </header>
+
+        <!--Main Content-->
+        <main>
+            <div id="newsfeed-body">
+                <div class="cards-wrapper">
+
+                    <div id="no-posts-view">
+                        <div class="no-posts-content">
+                            <div class="img-container no-content-img">
+                                <img src="../assets/post.jpg" alt="no content">
+                            </div>
+                            <div class="title">
+                                <h2>So much emptiness</h2>
+                            </div>
+                            <div class="body-copy">
+                                <p>Start sharing your thoughts!</p>
+                            </div>
+                            <div class="btn-container">
+                                <button class="btn primary-btn add-post-btn">Add New Post</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+
+        <!--Bottom Nav-->
+        <footer>
+            
+            <div id="bottom-nav">
+                <div class="nav-icon nav-home">home</div>
+                <div class="nav-icon nav-search">search</div>
+                <div class="nav-icon nav-add-post">
+                    <button class="primary-btn add-post-btn">+</a>
+                </div>
+                <div class="nav-icon nav-notifs">notifs</div>
+                <div class="nav-icon nav-message">message</div>
+            </div>
+
+            <!--Add New Post Container-->
+            <div id="new-post-container">
+                <div class="new-post-content">
+                    <div class="new-post-header">
+                        <div class="dismiss-new-post">
+                            <button class="btn-outline">Cancel</a>
+                        </div>
+                    </div>
+                    <div class="new-post-body">
+                        <div class="new-post-caption">
+                            <textarea class="text-area" placeholder="What's going on..."></textarea>
+                        </div>
+                    </div>
+                    <div class="new-post-footer">
+                        <div class="attachment-icons">
+                            <div class="icon">Img</div>
+                            <div class="icon">GIF</div>
+                            <div class="icon">Link</div>
+                        </div>
+                        <div class="btn-container">
+                            <button class="primary-btn" id="publish-post-btn">Publish</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+<script src="./app.js"></script>
+
+</html>
+
+
+<!-- Notes -->
+
+<!-- Ellipsis for caption if too long -->
+<!--  -->

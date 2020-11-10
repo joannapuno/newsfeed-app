@@ -1,0 +1,16 @@
+{
+  "name": "newsfeed-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gulp": "node_modules/.bin/gulp watch"
+  },
+  "author": "Joanna Puno",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-dart-sass": "^1.0.2",
+    "sass": "^1.29.0"
+  }
+}

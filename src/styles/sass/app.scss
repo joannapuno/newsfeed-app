@@ -1,0 +1,254 @@
+@import './base/variables.scss';
+@import './base/mixins.scss';
+
+///////General///////
+html,
+body {
+    height: 100%;
+    font-family: Helvetica, sans-serif; 
+    margin: 0;
+
+    #wrapper {
+        min-height: 100%;
+        position: relative;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    border: none;
+    text-align: center;
+}
+
+.btn {
+    border-radius: 5px;
+    padding: 5px 12px;
+}
+
+img {
+    width: 100%;
+}
+
+///////Header///////
+header {
+    margin-bottom: 50px;
+    #top-nav {
+        @include nav(repeat(3, 1fr),50px,#ddd);
+        @include position(fixed, 0, 0, unset, 0);
+    
+        box-shadow: 0 4px 5px 0 #cacaca;
+    
+        .side-drawer-toggle {
+            display: grid;
+            grid-template-rows: repeat(3, 1fr);
+            grid-gap: 5px;
+            padding: 10px;
+    
+            div {
+                background-color: #FFFF;
+                width: 30%;
+            }
+        }
+    }
+}
+
+///////Main Content///////
+#newsfeed-body {
+    background:#FFFF;
+    padding: 20px;
+    //height: 150vh;
+
+
+    // Card
+    .cards-wrapper {
+        height: 100%;
+
+        .card-item {
+            background-color: #fff;
+            box-shadow: 0px 0px 4px 0 #d0d0d0dd;
+            display: grid;
+            padding: 15px 10px;
+            grid-gap: 10px;
+            margin: 15px 0;
+
+            // HEADER
+            .card-header {
+                display: grid;
+                grid-template-columns: 1fr 10%;
+                align-items: center;
+
+                .card-user {
+                    display: grid;
+                    width: 40%;
+                    grid-gap: 10px;
+                    grid-template-columns: 1fr 1fr;
+                    align-items: center;
+
+                    .user-icon {
+                        height: 30px;
+                        width: 30px;
+                        background: salmon;
+                        border-radius: 50%;
+                    }
+
+                    .username {
+                        font-weight: 700;
+                    }
+                }
+
+                .card-more-options {
+
+                    .toggle-icon {
+                        height: 30px;
+                        width: 30px;
+                        background: pink;
+                    }
+                }
+            }
+
+            // CONTENT
+            .card-content {
+                display: grid;
+                grid-template-rows: repeat(auto-fill, minmax(10rem, 1fr));
+                grid-gap: 10px;
+                margin: 0 20px;
+
+                .date-stamp {
+                    color: #a5a5a5dd;
+                    font-size: 14px;
+                    font-weight: 100;
+                    margin-bottom: 10px;
+                }
+
+                .card-caption {
+                    color:#4a4a4add;
+                }
+
+                .card-attachment {
+                    width: 100%;
+                }
+
+                .card-attachment img {
+                    width: 100%; // make dynamic
+                }
+            }
+
+            //FOOTER
+            .card-footer {
+                margin: 0 20px;
+                .card-interact {
+                    display: grid;
+                    grid-template-columns: .5fr .5fr 1fr;
+
+                    .likes, 
+                    .comments {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        grid-gap: 5px;
+                    }
+                    
+
+                    .bookmark {
+                        justify-self: end;
+                    }
+                }
+            }
+        }
+    }
+}
+
+///////Footer///////
+#bottom-nav {
+    @include nav(repeat(5, 1fr),30px,#FFFF);
+    @include position(fixed,unset,0,0,0);
+    box-shadow: 0 -4px 5px 0 #cacaca;
+    padding: 10px 20px;
+
+    .nav-add-post {
+        position: relative;
+    }
+
+    .nav-notifs {
+        grid-area: 1 / 4;
+    }
+
+    .nav-message {
+        grid-area: 1 / 5;
+    }
+
+    .add-post-btn {
+        @include addPostBtn($primary-color, #FFFF, 34px);
+        border-radius: 50%;
+        position: absolute;
+        top: -35px;
+        height: 55px;
+        width: 55px;
+    }
+}
+
+
+///////NEW POST///////
+#new-post-container {
+    opacity: 0;
+    transition: 0.2s ease-in;
+
+    .new-post-content {
+        background: #f1f1f1;
+        min-height: 130px;
+        padding: 10px;
+        display: grid;
+        grid-gap: 10px;
+
+        .new-post-body {
+            textarea {
+                width: 100%
+            }
+        }
+
+        .new-post-footer {
+            display: grid;
+            grid-gap: 5px;
+            grid-template-columns: 1fr 1fr;
+
+            .attachment-icons {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(28px, 1fr));
+            }
+
+            .btn-container {
+                justify-self: end;
+            }
+        }
+    }
+}
+
+.new-post-container.show {
+    opacity: 1;
+}
+///////NO CONTENT///////
+#no-posts-view {
+    display: grid;
+    height: 70vh;
+    background: #FFFF;
+    border: 2px dashed #DDDD;
+    padding: 20px;
+    border-radius: 15px;
+    align-items: center;
+    text-align: center;
+
+    .no-posts-content {
+
+        .title {
+
+        }
+        .body-copy {
+
+        }
+        .add-post-btn {
+            @include addPostBtn($primary-color, #FFFF);
+        }
+    }
+}

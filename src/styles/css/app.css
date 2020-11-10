@@ -1,0 +1,216 @@
+html,
+body {
+  height: 100%;
+  font-family: Helvetica, sans-serif;
+  margin: 0;
+}
+html #wrapper,
+body #wrapper {
+  min-height: 100%;
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  text-align: center;
+}
+
+.btn {
+  border-radius: 5px;
+  padding: 5px 12px;
+}
+
+img {
+  width: 100%;
+}
+
+header {
+  margin-bottom: 50px;
+}
+header #top-nav {
+  display: grid;
+  grid-gap: 0;
+  grid-template-columns: repeat(3, 1fr);
+  background: #ddd;
+  height: 50px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: unset;
+  left: 0;
+  box-shadow: 0 4px 5px 0 #cacaca;
+}
+header #top-nav .side-drawer-toggle {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 5px;
+  padding: 10px;
+}
+header #top-nav .side-drawer-toggle div {
+  background-color: #FFFF;
+  width: 30%;
+}
+
+#newsfeed-body {
+  background: #FFFF;
+  padding: 20px;
+}
+#newsfeed-body .cards-wrapper {
+  height: 100%;
+}
+#newsfeed-body .cards-wrapper .card-item {
+  background-color: #fff;
+  box-shadow: 0px 0px 4px 0 #d0d0d0dd;
+  display: grid;
+  padding: 15px 10px;
+  grid-gap: 10px;
+  margin: 15px 0;
+}
+#newsfeed-body .cards-wrapper .card-item .card-header {
+  display: grid;
+  grid-template-columns: 1fr 10%;
+  align-items: center;
+}
+#newsfeed-body .cards-wrapper .card-item .card-header .card-user {
+  display: grid;
+  width: 40%;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+#newsfeed-body .cards-wrapper .card-item .card-header .card-user .user-icon {
+  height: 30px;
+  width: 30px;
+  background: salmon;
+  border-radius: 50%;
+}
+#newsfeed-body .cards-wrapper .card-item .card-header .card-user .username {
+  font-weight: 700;
+}
+#newsfeed-body .cards-wrapper .card-item .card-header .card-more-options .toggle-icon {
+  height: 30px;
+  width: 30px;
+  background: pink;
+}
+#newsfeed-body .cards-wrapper .card-item .card-content {
+  display: grid;
+  grid-template-rows: repeat(auto-fill, minmax(10rem, 1fr));
+  grid-gap: 10px;
+  margin: 0 20px;
+}
+#newsfeed-body .cards-wrapper .card-item .card-content .date-stamp {
+  color: #a5a5a5dd;
+  font-size: 14px;
+  font-weight: 100;
+  margin-bottom: 10px;
+}
+#newsfeed-body .cards-wrapper .card-item .card-content .card-caption {
+  color: #4a4a4add;
+}
+#newsfeed-body .cards-wrapper .card-item .card-content .card-attachment {
+  width: 100%;
+}
+#newsfeed-body .cards-wrapper .card-item .card-content .card-attachment img {
+  width: 100%;
+}
+#newsfeed-body .cards-wrapper .card-item .card-footer {
+  margin: 0 20px;
+}
+#newsfeed-body .cards-wrapper .card-item .card-footer .card-interact {
+  display: grid;
+  grid-template-columns: 0.5fr 0.5fr 1fr;
+}
+#newsfeed-body .cards-wrapper .card-item .card-footer .card-interact .likes,
+#newsfeed-body .cards-wrapper .card-item .card-footer .card-interact .comments {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 5px;
+}
+#newsfeed-body .cards-wrapper .card-item .card-footer .card-interact .bookmark {
+  justify-self: end;
+}
+
+#bottom-nav {
+  display: grid;
+  grid-gap: 0;
+  grid-template-columns: repeat(5, 1fr);
+  background: #FFFF;
+  height: 30px;
+  position: fixed;
+  top: unset;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0 -4px 5px 0 #cacaca;
+  padding: 10px 20px;
+}
+#bottom-nav .nav-add-post {
+  position: relative;
+}
+#bottom-nav .nav-notifs {
+  grid-area: 1/4;
+}
+#bottom-nav .nav-message {
+  grid-area: 1/5;
+}
+#bottom-nav .add-post-btn {
+  background: #3181fd;
+  color: #FFFF;
+  font-size: 34px;
+  border-radius: 50%;
+  position: absolute;
+  top: -35px;
+  height: 55px;
+  width: 55px;
+}
+
+#new-post-container {
+  opacity: 0;
+  transition: 0.2s ease-in;
+}
+#new-post-container .new-post-content {
+  background: #f1f1f1;
+  min-height: 130px;
+  padding: 10px;
+  display: grid;
+  grid-gap: 10px;
+}
+#new-post-container .new-post-content .new-post-body textarea {
+  width: 100%;
+}
+#new-post-container .new-post-content .new-post-footer {
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: 1fr 1fr;
+}
+#new-post-container .new-post-content .new-post-footer .attachment-icons {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(28px, 1fr));
+}
+#new-post-container .new-post-content .new-post-footer .btn-container {
+  justify-self: end;
+}
+
+.new-post-container.show {
+  opacity: 1;
+}
+
+#no-posts-view {
+  display: grid;
+  height: 70vh;
+  background: #FFFF;
+  border: 2px dashed #DDDD;
+  padding: 20px;
+  border-radius: 15px;
+  align-items: center;
+  text-align: center;
+}
+#no-posts-view .no-posts-content .add-post-btn {
+  background: #3181fd;
+  color: #FFFF;
+  font-size: 16px;
+}
