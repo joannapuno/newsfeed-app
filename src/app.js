@@ -31,13 +31,6 @@ const dismissAddNewHandler = () => {
     newPostBox.classList.remove('show');
 }
 
-
-addPostBtns.forEach(btn => {
-    btn.addEventListener('click',showAddNewFormHandler, false)
-})
-
-dismissAddNewBtn.addEventListener('click',dismissAddNewHandler, false);
-
 ///// Add New Post /////
 const createNewPostHandler = formData => {
     const cardsWrapper = document.querySelector('.cards-wrapper');
@@ -72,6 +65,13 @@ const createNewPostHandler = formData => {
     cardsWrapper.appendChild(card_c);
 
 };
+
+
+
+addPostBtns.forEach(btn => {
+    btn.addEventListener('click',showAddNewFormHandler, false)
+})
+dismissAddNewBtn.addEventListener('click',dismissAddNewHandler, false);
 
 publishPostBtn.addEventListener('click', evt => {
     const todayDate = new Date();

@@ -11,45 +11,72 @@ body {
     #wrapper {
         min-height: 100%;
         position: relative;
+
+        textarea {
+            font-family: Helvetica, sans-serif; 
+            resize: none;
+            overflow: scroll;
+            border: none;
+            min-height: 70px;
+            background: #FFFF;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        button {
+            border: none;
+            text-align: center;
+        }
+        
+        .btn {
+            border-radius: 5px;
+            padding: 5px 12px;
+        
+            &:disabled {
+                opacity: $btn-disabled;
+            }
+        }
+        
+        .primary-btn {
+            color: #FFFF;
+            background-color: $primary-color;
+        
+            &:hover,
+            &:focus,
+            &:active {
+                background: $primary-color-hov;
+            }
+        }
+        
+        img {
+            width: 100%;
+        }
     }
 }
 
-a {
-    text-decoration: none;
-}
 
-button {
-    border: none;
-    text-align: center;
-}
-
-.btn {
-    border-radius: 5px;
-    padding: 5px 12px;
-}
-
-img {
-    width: 100%;
-}
 
 ///////Header///////
 header {
     margin-bottom: 50px;
     #top-nav {
-        @include nav(repeat(3, 1fr),50px,#ddd);
+        @include nav(repeat(3, 1fr),50px,#FFFF);
         @include position(fixed, 0, 0, unset, 0);
     
-        box-shadow: 0 4px 5px 0 #cacaca;
+        box-shadow: 0 4px 4px 0 #ddd;
     
         .side-drawer-toggle {
             display: grid;
             grid-template-rows: repeat(3, 1fr);
             grid-gap: 5px;
             padding: 10px;
+            width: 18%;
     
             div {
-                background-color: #FFFF;
-                width: 30%;
+                background-color: #DDD;
+                height: 3px;
             }
         }
     }
@@ -184,7 +211,7 @@ header {
     }
 
     .add-post-btn {
-        @include addPostBtn($primary-color, #FFFF, 34px);
+        @include addPostBtn(34px);
         border-radius: 50%;
         position: absolute;
         top: -35px;
@@ -209,11 +236,12 @@ header {
     transform: translateY(100%);
     
     .new-post-content {
-        background: #f1f1f1;
-        min-height: 130px;
-        padding: 10px;
+        background: #ffffff;
+        min-height: 155px;
+        padding: 10px 30px;
         display: grid;
         grid-gap: 10px;
+        box-shadow: 0 -2px 8px 0 #DDD;
 
         .new-post-body {
             textarea {
@@ -264,7 +292,7 @@ header {
 
             }
             .add-post-btn {
-                @include addPostBtn($primary-color, #FFFF);
+                @include addPostBtn;
             }
         }
     }

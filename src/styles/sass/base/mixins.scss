@@ -7,7 +7,7 @@
     left: $left;
 }
 
-@mixin grid($direction: false, $values: false, $gridArea: false, $gap: 0) {
+@mixin grid($direction: 'false', $values: 'false', $gridArea: 'false', $gap: 0) {
     display: grid;
     grid-gap: $gap;
 
@@ -29,9 +29,7 @@
     height: $height;
 }
 
-@mixin addPostBtn($bgColor, $color, $fontSize: 16px) {
-    background: $bgColor;
-    color: $color;
+@mixin addPostBtn($fontSize: 16px) {
     font-size: $fontSize;
 }
 
