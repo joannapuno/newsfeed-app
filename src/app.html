@@ -33,32 +33,73 @@
         <!--Main Content-->
         <main>
             <div id="newsfeed-body">
-                <div class="cards-wrapper">
 
-                    <div id="no-posts-view">
-                        <div class="no-posts-content">
-                            <div class="img-container no-content-img">
-                                <img src="../assets/post.jpg" alt="no content">
-                            </div>
-                            <div class="title">
-                                <h2>So much emptiness</h2>
-                            </div>
-                            <div class="body-copy">
-                                <p>Start sharing your thoughts!</p>
-                            </div>
-                            <div class="btn-container">
-                                <button class="btn primary-btn add-post-btn">Add New Post</a>
+                <div id="no-posts-view">
+                    <div class="no-posts-content">
+                        <div class="img-container no-content-img">
+                            <img src="../assets/post.jpg" alt="no content">
+                        </div>
+                        <div class="title">
+                            <h2>So much emptiness</h2>
+                        </div>
+                        <div class="body-copy">
+                            <p>Start sharing your thoughts!</p>
+                        </div>
+                        <div class="btn-container">
+                            <button class="btn primary-btn add-post-btn">Add New Post</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Card Master-->
+                <div class="card-item-master">
+                    <div class="card-header">
+                        <div class="card-user">
+                            <div class="user-icon"></div>
+                            <div class="username">Username</div>
+                        </div>
+                        <div class="card-more-options">
+                            <div class="toggle-icon">
+                                <div></div>
+                                <div></div>
+                                <div></div>
                             </div>
                         </div>
                     </div>
+                    <div class="card-content">
+                        <!--If there is attachment-->
+                        <div class="card-attachment"></div>
 
+                        <!--Just caption-->
+                        <div class="card-caption">
+                            <div class="date-stamp"></div>
+                            <div class="caption"></div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-interact">
+                            <div class="likes">
+                                <div class="icon">[Icon]</div>
+                                <div class="count"></div>
+                            </div>
+                            <div class="comments">
+                                <div class="icon">[Icon]</div>
+                                <div class="count"></div>
+                            </div>
+                            <div class="bookmark">
+                                <div class="icon">[Icon]</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+                <div class="cards-wrapper"></div>
             </div>
         </main>
 
         <!--Bottom Nav-->
         <footer>
-            
+
             <div id="bottom-nav">
                 <div class="nav-icon nav-home">home</div>
                 <div class="nav-icon nav-search">search</div>
@@ -78,9 +119,13 @@
                         </div>
                     </div>
                     <div class="new-post-body">
-                        <div class="new-post-caption">
-                            <textarea class="text-area" placeholder="What's going on..."></textarea>
-                        </div>
+                        <form id="new-post-form">
+                            <div class="new-post-caption">
+                                <textarea id="txt-new-post" class="text-area"
+                                    placeholder="What's going on..."></textarea>
+                            </div>
+                            <input type="file" id="post-img" name="PostImage" accept="image/png, image/jpeg">
+                        </form>
                     </div>
                     <div class="new-post-footer">
                         <div class="attachment-icons">
@@ -107,4 +152,5 @@
 <!-- Notes -->
 
 <!-- Ellipsis for caption if too long -->
-<!--  -->
+<!-- Add validation -->
+<!-- Text max -->

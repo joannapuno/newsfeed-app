@@ -59,6 +59,9 @@ header #top-nav .side-drawer-toggle div {
   background: #FFFF;
   padding: 20px;
 }
+#newsfeed-body .card-item-master {
+  display: none;
+}
 #newsfeed-body .cards-wrapper {
   height: 100%;
 }
