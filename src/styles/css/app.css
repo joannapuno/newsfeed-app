@@ -22,6 +22,17 @@ html #wrapper a,
 body #wrapper a {
   text-decoration: none;
 }
+html #wrapper h1, html #wrapper h2, html #wrapper h3, html #wrapper h4, html #wrapper h5, html #wrapper h6,
+html #wrapper p,
+body #wrapper h1,
+body #wrapper h2,
+body #wrapper h3,
+body #wrapper h4,
+body #wrapper h5,
+body #wrapper h6,
+body #wrapper p {
+  margin: 0;
+}
 html #wrapper button,
 body #wrapper button {
   border: none;
@@ -234,7 +245,7 @@ header #top-nav .app-user .user-img-container img {
   font-size: 34px;
   border-radius: 50%;
   position: absolute;
-  top: -35px;
+  bottom: 0;
   height: 55px;
   width: 55px;
 }
@@ -307,6 +318,10 @@ header #top-nav .app-user .user-img-container img {
   border-radius: 15px;
   align-items: center;
   text-align: center;
+}
+#no-posts-container #no-posts-view .no-posts-content {
+  display: grid;
+  grid-gap: 10px;
 }
 #no-posts-container #no-posts-view .no-posts-content .add-post-btn {
   font-size: 16px;

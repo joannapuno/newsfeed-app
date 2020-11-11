@@ -24,6 +24,11 @@ body {
         a {
             text-decoration: none;
         }
+
+        h1, h2, h3, h4, h5, h6,
+        p {
+            margin: 0;
+        }
         
         button {
             border: none;
@@ -262,7 +267,7 @@ header {
         @include addPostBtn(34px);
         border-radius: 50%;
         position: absolute;
-        top: -35px;
+        bottom: 0;
         height: 55px;
         width: 55px;
     }
@@ -352,7 +357,8 @@ header {
         text-align: center;
 
         .no-posts-content {
-
+            display: grid;
+            grid-gap: 10px;
             .title {
 
             }
