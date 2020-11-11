@@ -58,8 +58,9 @@ header #top-nav .side-drawer-toggle div {
 #newsfeed-body {
   background: #FFFF;
   padding: 20px;
+  margin-bottom: 25vh;
 }
-#newsfeed-body .card-item-master {
+#newsfeed-body .card-item-orig {
   display: none;
 }
 #newsfeed-body .cards-wrapper {
@@ -80,9 +81,8 @@ header #top-nav .side-drawer-toggle div {
 }
 #newsfeed-body .cards-wrapper .card-item .card-header .card-user {
   display: grid;
-  width: 40%;
   grid-gap: 10px;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 10% 1fr;
   align-items: center;
 }
 #newsfeed-body .cards-wrapper .card-item .card-header .card-user .user-icon {
@@ -213,7 +213,7 @@ header #top-nav .side-drawer-toggle div {
   transition: 0.2s ease-in;
 }
 
-#no-posts-view {
+#no-posts-container #no-posts-view {
   display: grid;
   height: 70vh;
   background: #FFFF;
@@ -223,7 +223,7 @@ header #top-nav .side-drawer-toggle div {
   align-items: center;
   text-align: center;
 }
-#no-posts-view .no-posts-content .add-post-btn {
+#no-posts-container #no-posts-view .no-posts-content .add-post-btn {
   background: #3181fd;
   color: #FFFF;
   font-size: 16px;

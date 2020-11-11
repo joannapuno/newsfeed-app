@@ -59,9 +59,10 @@ header {
 #newsfeed-body {
     background:#FFFF;
     padding: 20px;
+    margin-bottom: 25vh;
     //height: 150vh;
 
-    .card-item-master {
+    .card-item-orig {
         display: none;
     }
 
@@ -85,9 +86,8 @@ header {
 
                 .card-user {
                     display: grid;
-                    width: 40%;
                     grid-gap: 10px;
-                    grid-template-columns: 1fr 1fr;
+                    grid-template-columns: 10% 1fr;
                     align-items: center;
 
                     .user-icon {
@@ -244,26 +244,28 @@ header {
 }
 
 ///////NO CONTENT///////
-#no-posts-view {
-    display: grid;
-    height: 70vh;
-    background: #FFFF;
-    border: 2px dashed #DDDD;
-    padding: 20px;
-    border-radius: 15px;
-    align-items: center;
-    text-align: center;
+#no-posts-container {
+    #no-posts-view {
+        display: grid;
+        height: 70vh;
+        background: #FFFF;
+        border: 2px dashed #DDDD;
+        padding: 20px;
+        border-radius: 15px;
+        align-items: center;
+        text-align: center;
 
-    .no-posts-content {
+        .no-posts-content {
 
-        .title {
+            .title {
 
-        }
-        .body-copy {
+            }
+            .body-copy {
 
-        }
-        .add-post-btn {
-            @include addPostBtn($primary-color, #FFFF);
+            }
+            .add-post-btn {
+                @include addPostBtn($primary-color, #FFFF);
+            }
         }
     }
 }
