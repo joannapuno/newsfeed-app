@@ -26,6 +26,7 @@ html #wrapper button,
 body #wrapper button {
   border: none;
   text-align: center;
+  cursor: pointer;
 }
 html #wrapper .btn,
 body #wrapper .btn {
@@ -35,6 +36,11 @@ body #wrapper .btn {
 html #wrapper .btn:disabled,
 body #wrapper .btn:disabled {
   opacity: 0.25;
+}
+html #wrapper .btn-icon,
+body #wrapper .btn-icon {
+  background: none;
+  cursor: pointer;
 }
 html #wrapper .primary-btn,
 body #wrapper .primary-btn {
@@ -62,12 +68,14 @@ header #top-nav {
   grid-area: "false";
   background: #FFFF;
   height: 50px;
+  align-items: center;
   position: fixed;
   top: 0;
   right: 0;
   bottom: unset;
   left: 0;
   box-shadow: 0 4px 4px 0 #ddd;
+  padding: 5px 10px;
 }
 header #top-nav .side-drawer-toggle {
   display: grid;
@@ -79,6 +87,28 @@ header #top-nav .side-drawer-toggle {
 header #top-nav .side-drawer-toggle div {
   background-color: #DDD;
   height: 3px;
+}
+header #top-nav .app-logo {
+  justify-self: center;
+}
+header #top-nav .app-logo .icon-container {
+  width: 45px;
+  cursor: pointer;
+}
+header #top-nav .app-logo svg {
+  fill: #3181fd;
+}
+header #top-nav .app-user {
+  justify-self: end;
+}
+header #top-nav .app-user .user-img-container {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+header #top-nav .app-user .user-img-container img {
+  height: 100%;
 }
 
 #newsfeed-body {
@@ -170,6 +200,7 @@ header #top-nav .side-drawer-toggle div {
   grid-area: "false";
   background: #FFFF;
   height: 30px;
+  align-items: center;
   position: fixed;
   top: unset;
   right: 0;
@@ -178,6 +209,10 @@ header #top-nav .side-drawer-toggle div {
   box-shadow: 0 -4px 5px 0 #cacaca;
   padding: 10px 20px;
   transition: 0.2s ease-in;
+}
+#bottom-nav .nav-icon {
+  width: 35px;
+  height: 35px;
 }
 #bottom-nav .nav-add-post {
   position: relative;
@@ -221,6 +256,15 @@ header #top-nav .side-drawer-toggle div {
 #new-post-container .new-post-content .new-post-body textarea {
   width: 100%;
 }
+#new-post-container .new-post-content .new-post-body .attached-files-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+}
+#new-post-container .new-post-content .new-post-body .attached-files-container .img-container {
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+}
 #new-post-container .new-post-content .new-post-footer {
   display: grid;
   grid-gap: 5px;
@@ -228,7 +272,15 @@ header #top-nav .side-drawer-toggle div {
 }
 #new-post-container .new-post-content .new-post-footer .attachment-icons {
   display: grid;
+  grid-gap: 16px;
   grid-template-columns: repeat(auto-fill, minmax(28px, 1fr));
+}
+#new-post-container .new-post-content .new-post-footer .attachment-icons input[type=file] {
+  display: none;
+}
+#new-post-container .new-post-content .new-post-footer .attachment-icons .icon {
+  width: 25px;
+  height: 25px;
 }
 #new-post-container .new-post-content .new-post-footer .btn-container {
   justify-self: end;

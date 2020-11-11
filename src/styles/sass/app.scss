@@ -28,6 +28,7 @@ body {
         button {
             border: none;
             text-align: center;
+            cursor: pointer;
         }
         
         .btn {
@@ -37,6 +38,11 @@ body {
             &:disabled {
                 opacity: $btn-disabled;
             }
+        }
+
+        .btn-icon {
+            background: none;
+            cursor: pointer;
         }
         
         .primary-btn {
@@ -61,11 +67,13 @@ body {
 ///////Header///////
 header {
     margin-bottom: 50px;
+
     #top-nav {
         @include nav(repeat(3, 1fr),50px,#FFFF);
         @include position(fixed, 0, 0, unset, 0);
     
         box-shadow: 0 4px 4px 0 #ddd;
+        padding: 5px 10px;
     
         .side-drawer-toggle {
             display: grid;
@@ -77,6 +85,33 @@ header {
             div {
                 background-color: #DDD;
                 height: 3px;
+            }
+        }
+
+        .app-logo {
+            justify-self: center;
+
+            .icon-container {
+                width: 45px;
+                cursor: pointer;
+            }
+            svg {
+                fill: $primary-color;
+            }
+        }
+
+        .app-user {
+            justify-self: end;
+
+            .user-img-container {
+                height: 35px;
+                width: 35px;
+                border-radius: 50%;
+                overflow: hidden;
+
+                img {
+                    height: 100%;
+                }
             }
         }
     }
@@ -198,6 +233,10 @@ header {
     padding: 10px 20px;
     transition: .2s ease-in;
 
+    .nav-icon {
+        @include icon(35px, 35px);
+    }
+
     .nav-add-post {
         position: relative;
     }
@@ -247,16 +286,36 @@ header {
             textarea {
                 width: 100%
             }
-        }
 
+            .attached-files-container {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+
+                .img-container {
+                    width: 50px;
+                    height: 50px;
+                    overflow: hidden;
+                }
+            }
+        }
+        
         .new-post-footer {
             display: grid;
             grid-gap: 5px;
             grid-template-columns: 1fr 1fr;
-
+            
             .attachment-icons {
                 display: grid;
+                grid-gap: 16px;
                 grid-template-columns: repeat(auto-fill, minmax(28px, 1fr));
+                
+                input[type="file"] {
+                    display: none;
+                }
+
+                .icon {
+                    @include icon(25px, 25px)
+                }
             }
 
             .btn-container {

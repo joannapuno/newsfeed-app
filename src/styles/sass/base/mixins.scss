@@ -27,12 +27,19 @@
     
     background: $bgColor;
     height: $height;
+    align-items: center;
 }
 
 @mixin addPostBtn($fontSize: 16px) {
     font-size: $fontSize;
 }
 
-@mixin nav-icon() {
-    
+@mixin icon($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin svg($fill, $outline: 'none') {
+    fill: $fill;
+    outline: $outline;
 }
