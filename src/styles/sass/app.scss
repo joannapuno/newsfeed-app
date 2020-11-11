@@ -232,9 +232,14 @@ header {
     box-shadow: 0 -4px 5px 0 #cacaca;
     padding: 10px 20px;
     transition: .2s ease-in;
+    justify-items: center;
 
     .nav-icon {
-        @include icon(35px, 35px);
+        @include icon(25px, 25px);
+
+        svg {
+            fill: $bottom-icon-color;
+        }
     }
 
     .nav-add-post {
@@ -254,6 +259,7 @@ header {
         border-radius: 50%;
         position: absolute;
         top: -35px;
+        left: -15px;
         height: 55px;
         width: 55px;
     }
