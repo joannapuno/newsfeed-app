@@ -209,7 +209,6 @@ header #top-nav .app-user .user-img-container img {
   box-shadow: 0 -4px 5px 0 #cacaca;
   padding: 10px 20px;
   transition: 0.2s ease-in;
-  justify-items: center;
 }
 #bottom-nav .nav-icon {
   width: 25px;
@@ -227,12 +226,15 @@ header #top-nav .app-user .user-img-container img {
 #bottom-nav .nav-message {
   grid-area: 1/5;
 }
+#bottom-nav .nav-notifs,
+#bottom-nav .nav-message {
+  justify-self: center;
+}
 #bottom-nav .add-post-btn {
   font-size: 34px;
   border-radius: 50%;
   position: absolute;
   top: -35px;
-  left: -15px;
   height: 55px;
   width: 55px;
 }

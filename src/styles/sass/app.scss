@@ -232,7 +232,6 @@ header {
     box-shadow: 0 -4px 5px 0 #cacaca;
     padding: 10px 20px;
     transition: .2s ease-in;
-    justify-items: center;
 
     .nav-icon {
         @include icon(25px, 25px);
@@ -254,12 +253,16 @@ header {
         grid-area: 1 / 5;
     }
 
+    .nav-notifs,
+    .nav-message {
+        justify-self: center;
+    }
+
     .add-post-btn {
         @include addPostBtn(34px);
         border-radius: 50%;
         position: absolute;
         top: -35px;
-        left: -15px;
         height: 55px;
         width: 55px;
     }
