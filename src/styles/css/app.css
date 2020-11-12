@@ -187,16 +187,13 @@ header #top-nav .app-user .user-img-container img {
   background: #a2b9dc;
 }
 #newsfeed-body .cards-wrapper .card-item .card-content {
-  display: grid;
-  grid-template-rows: repeat(auto-fill, minmax(10rem, 1fr));
-  grid-gap: 10px;
   margin: 0 20px;
 }
 #newsfeed-body .cards-wrapper .card-item .card-content .date-stamp {
   color: #a5a5a5dd;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 100;
-  margin-bottom: 10px;
+  margin-bottom: 13px;
 }
 #newsfeed-body .cards-wrapper .card-item .card-content .card-caption {
   color: #4a4a4add;
@@ -214,11 +211,23 @@ header #top-nav .app-user .user-img-container img {
   display: grid;
   grid-template-columns: 0.5fr 0.5fr 1fr;
 }
+#newsfeed-body .cards-wrapper .card-item .card-footer .card-interact .card-icon-action .icon {
+  width: 20px;
+  height: 20px;
+}
+#newsfeed-body .cards-wrapper .card-item .card-footer .card-interact .card-icon-action .icon svg {
+  fill: #a2a2a2;
+}
+#newsfeed-body .cards-wrapper .card-item .card-footer .card-interact .card-icon-action .count {
+  font-size: 12px;
+  color: #a2a2a2;
+}
 #newsfeed-body .cards-wrapper .card-item .card-footer .card-interact .likes,
 #newsfeed-body .cards-wrapper .card-item .card-footer .card-interact .comments {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 5px;
+  align-items: center;
 }
 #newsfeed-body .cards-wrapper .card-item .card-footer .card-interact .bookmark {
   justify-self: end;
