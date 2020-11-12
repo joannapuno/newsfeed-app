@@ -281,6 +281,19 @@ main #newsfeed-body .cards-wrapper {
 #bottom-nav .nav-add-post {
   position: relative;
 }
+#bottom-nav .nav-add-post .btn-container {
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+  height: 55px;
+  width: 55px;
+  overflow: hidden;
+}
+#bottom-nav .nav-add-post .btn-container button {
+  font-size: 34px;
+  width: 100%;
+  height: 100%;
+}
 #bottom-nav .nav-notifs {
   grid-area: 1/4;
 }
@@ -290,14 +303,6 @@ main #newsfeed-body .cards-wrapper {
 #bottom-nav .nav-notifs,
 #bottom-nav .nav-message {
   justify-self: center;
-}
-#bottom-nav .add-post-btn {
-  font-size: 34px;
-  border-radius: 50%;
-  position: absolute;
-  bottom: 0;
-  height: 55px;
-  width: 55px;
 }
 
 #bottom-nav.hide {
