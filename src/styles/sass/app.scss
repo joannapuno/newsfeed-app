@@ -67,7 +67,17 @@ body {
     }
 }
 
-
+///////Backdrop///////
+#backdrop {
+    display: none;
+    background: #1e245661;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
 
 ///////Header///////
 header {
@@ -109,11 +119,7 @@ header {
             justify-self: end;
 
             .user-img-container {
-                height: 35px;
-                width: 35px;
-                border-radius: 50%;
-                overflow: hidden;
-
+                @include userProfile(35px, 35px);
                 img {
                     height: 100%;
                 }
@@ -157,11 +163,12 @@ header {
                     grid-template-columns: 10% 1fr;
                     align-items: center;
 
-                    .user-icon {
-                        height: 30px;
-                        width: 30px;
-                        background: salmon;
-                        border-radius: 50%;
+                    .user-img-container {
+                        @include userProfile(30px, 30px);
+
+                        img {
+                            height: 100%;
+                        }
                     }
 
                     .username {
@@ -172,9 +179,16 @@ header {
                 .card-more-options {
 
                     .toggle-icon {
-                        height: 30px;
-                        width: 30px;
-                        background: pink;
+                        display: grid;
+                        grid-gap: 4px;
+                        cursor: pointer;
+
+                        div {
+                            border-radius: 50%;
+                            height: 5px;
+                            width: 5px;
+                            background: #a2b9dc;
+                        }
                     }
                 }
             }
@@ -287,6 +301,7 @@ header {
     left: 0;
     transition: 0.2s ease-in;
     transform: translateY(100%);
+    z-index: 2;
     
     .new-post-content {
         background: #ffffff;

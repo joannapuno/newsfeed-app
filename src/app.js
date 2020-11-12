@@ -10,32 +10,48 @@ const newPostCaption = document.getElementById('txt-new-post');
 const newPostAttachment = document.getElementById('post-attachment');
 
 ///// Show Add New Post Field /////
+
+//Backdrop
+const toggleBackdropHandler = () => {
+    const backdrop = document.getElementById('backdrop');
+    backdrop.style.display = backdrop.style.display === 'block' ? 'none' : 'block';
+
+    backdrop.addEventListener('click', toggleAddPostFieldHandler, false);
+}
 const showAddNewFormHandler = () => {
+    toggleAddPostFieldHandler();
+
+    //Reset Form + attached imgs
+    newPostForm.reset();
+    document.querySelector('.attached-files-container') ? 
+    document.querySelector('.attached-files-container').remove() : null;
+    publishPostBtn.disabled = true;
+
+    // Evt Listeners
+    newPostCaption.addEventListener('input', evt => {
+        publishPostBtn.disabled = false;
+    })
+    newPostAttachment.addEventListener('change', evt => {
+        publishPostBtn.disabled = false;
+
+        if(!document.querySelector('.attached-files-container')) {
+            let previewContainer = document.querySelector('.new-post-caption');
+            let selectedImgs = createImgSrcHandler([...newPostAttachment.files]);
+            previewContainer.appendChild(selectedImgs);
+        }
+    })
+}
+
+const toggleAddPostFieldHandler = () => {
+    toggleBackdropHandler();
     
     if (!newPostBox.classList.contains('show')) {
         bottomNav.classList.add('hide');
         newPostBox.classList.add('show');
+    } else {
+        bottomNav.classList.remove('hide');
+        newPostBox.classList.remove('show');
     }
-    newPostForm.reset();
-    publishPostBtn.disabled = true;
-    
-    document.querySelector('.attached-files-container') ? 
-    document.querySelector('.attached-files-container').remove() : null;
-    
-    newPostCaption.addEventListener('input', () => {
-        publishPostBtn.disabled = false;
-    })
-    newPostAttachment.addEventListener('change', () => {
-        let previewContainer = document.querySelector('.new-post-caption');
-            publishPostBtn.disabled = false;
-            let selectedImgs = createImgSrcHandler([...newPostAttachment.files]);
-            previewContainer.appendChild(selectedImgs);
-        })
-}
-
-const dismissAddNewHandler = () => {
-    bottomNav.classList.remove('hide');
-    newPostBox.classList.remove('show');
 }
 
 const createImgSrcHandler = files => {
@@ -94,7 +110,7 @@ const createNewPostHandler = formData => {
 addPostBtns.forEach(btn => {
     btn.addEventListener('click', showAddNewFormHandler, false)
 })
-dismissAddNewBtn.addEventListener('click', dismissAddNewHandler, false);
+dismissAddNewBtn.addEventListener('click', toggleAddPostFieldHandler, false);
 
 publishPostBtn.addEventListener('click', evt => {
     evt.preventDefault();
@@ -113,8 +129,11 @@ publishPostBtn.addEventListener('click', evt => {
     noPostsView.style.display = 'none';
 
     createNewPostHandler(formData);
-    dismissAddNewHandler();
+    toggleAddPostFieldHandler();
 })
+
+
+
 
 
 

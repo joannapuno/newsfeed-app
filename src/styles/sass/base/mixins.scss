@@ -43,3 +43,10 @@
     fill: $fill;
     outline: $outline;
 }
+
+@mixin userProfile($width, $height) {
+    width: $width;
+    height: $height;
+    border-radius: 50%;
+    overflow: hidden;
+}
