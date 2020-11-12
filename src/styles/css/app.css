@@ -22,7 +22,7 @@ header #top-nav #side-drawer-toggle {
   grid-template-rows: repeat(3, 1fr);
   grid-gap: 5px;
   padding: 10px;
-  width: 18%;
+  width: 30px;
 }
 header #top-nav #side-drawer-toggle div {
   background-color: #DDD;
@@ -293,6 +293,13 @@ main #newsfeed-body .cards-wrapper {
   font-size: 34px;
   width: 100%;
   height: 100%;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+#bottom-nav .nav-add-post .btn-container button .add-icon {
+  width: 35px;
+  height: 35px;
 }
 #bottom-nav .nav-notifs {
   grid-area: 1/4;

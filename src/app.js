@@ -14,7 +14,7 @@ const backdrop = document.getElementById('backdrop');
 
 //Backdrop
 const toggleBackdropHandler = component => {
-    backdrop.style.display = backdrop.style.display === 'block' ? 'none' : 'block';
+    //backdrop.style.display = backdrop.style.display === 'block' ? 'none' : 'block';
 
     // backdrop.addEventListener('click', toggleAddPostFieldHandler, false);
      backdrop.addEventListener('click', toggleSideDrawerHandler, false);
@@ -151,7 +151,7 @@ const toggleSideDrawerHandler = () => {
 }
 sideDrawerToggle.addEventListener('click', toggleSideDrawerHandler, false);
 
-///// Toggle Mode /////
+///// Toggle Dark Mode /////
 const modeToggle = document.getElementById('mode-toggle');
 const customizeEls = document.getElementsByClassName('changeable-item');
 
@@ -163,14 +163,6 @@ const toggleModeHandler = () => {
             el.classList.add('dark-mode');
         }
     };
-
-    // customizeEls.forEach(el => {
-    //     if(el.classList.contains('dark-mode')) {
-    //         el.classList.remove('dark-mode');
-    //     } else {
-    //         el.classList.add('dark-mode');
-    //     }
-    // });
 }
 
 modeToggle.addEventListener('change', evt => {
