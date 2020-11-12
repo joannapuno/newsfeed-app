@@ -1,17 +1,23 @@
 #bottom-nav {
-    @include nav(repeat(5, 1fr),30px);
+    @include nav(repeat(5, 1fr),38px);
     @include position(fixed,unset,0,0,0);
     box-shadow: 0 -4px 5px 0 $shadow-color;
-    padding: 10px 20px;
+    padding: 5px 20px;
     transition: .2s ease-in;
     background: #FFFF;
 
     .nav-icon {
         @include icon(25px, 25px);
+        padding: 5px;
+
+        &.active svg {
+            fill: $primary-color;
+        }
 
         svg {
             fill: $bottom-icon-color;
         }
+        
     }
 
     .nav-add-post {

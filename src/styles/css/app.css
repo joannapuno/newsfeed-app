@@ -155,6 +155,9 @@ header #top-nav .app-user .user-img-container img {
 #side-drawer .side-drawer-content .user-img-container img {
   height: 100%;
 }
+#side-drawer .side-drawer-content .side-menu-settings div {
+  margin: 10px;
+}
 
 #side-drawer.dark-mode {
   background: #393a63;
@@ -286,7 +289,7 @@ main #newsfeed-body .cards-wrapper {
   grid-gap: 0;
   grid-template-columns: repeat(5, 1fr);
   grid-area: "false";
-  height: 30px;
+  height: 38px;
   align-items: center;
   position: fixed;
   top: unset;
@@ -294,13 +297,17 @@ main #newsfeed-body .cards-wrapper {
   bottom: 0;
   left: 0;
   box-shadow: 0 -4px 5px 0 #00000030;
-  padding: 10px 20px;
+  padding: 5px 20px;
   transition: 0.2s ease-in;
   background: #FFFF;
 }
 #bottom-nav .nav-icon {
   width: 25px;
   height: 25px;
+  padding: 5px;
+}
+#bottom-nav .nav-icon.active svg {
+  fill: #3181fd;
 }
 #bottom-nav .nav-icon svg {
   fill: #a0a0a0;
@@ -462,6 +469,10 @@ body #wrapper h5,
 body #wrapper h6,
 body #wrapper p {
   margin: 0;
+}
+html #wrapper p,
+body #wrapper p {
+  line-height: 1.5em;
 }
 html #wrapper button,
 body #wrapper button {
