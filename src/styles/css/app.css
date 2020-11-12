@@ -520,3 +520,6 @@ body #wrapper .username {
   grid-gap: 10px;
   justify-items: center;
 }
+#no-posts-container #no-posts-view .no-posts-content .img-container {
+  width: 100%;
+}
