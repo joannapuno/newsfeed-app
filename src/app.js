@@ -19,12 +19,12 @@ const toggleBackdropHandler = () => {
     backdrop.addEventListener('click', toggleAddPostFieldHandler, false);
 }
 const showAddNewFormHandler = () => {
+    let previewImages = document.querySelector('.new-post-caption').querySelector('.attached-files-container');
     toggleAddPostFieldHandler();
 
     //Reset Form + attached imgs
     newPostForm.reset();
-    document.querySelector('.attached-files-container') ? 
-    document.querySelector('.attached-files-container').remove() : null;
+    previewImages != null ? previewImages.remove() : null;
     publishPostBtn.disabled = true;
 
     // Evt Listeners
@@ -34,11 +34,9 @@ const showAddNewFormHandler = () => {
     newPostAttachment.addEventListener('change', evt => {
         publishPostBtn.disabled = false;
 
-        if(!document.querySelector('.attached-files-container')) {
-            let previewContainer = document.querySelector('.new-post-caption');
-            let selectedImgs = createImgSrcHandler([...newPostAttachment.files]);
-            previewContainer.appendChild(selectedImgs);
-        }
+        let previewContainer = document.querySelector('.new-post-caption');
+        let selectedImgs = createImgSrcHandler([...newPostAttachment.files]);
+        previewContainer.appendChild(selectedImgs);
     })
 }
 
@@ -54,7 +52,10 @@ const toggleAddPostFieldHandler = () => {
     }
 }
 
-const createImgSrcHandler = files => {
+const createImgSrcHandler = (files, isPreview) => {
+    let previewImages = document.querySelector('.new-post-caption').querySelector('.attached-files-container');
+    previewImages != null ? previewImages.remove() : null;
+    
     let attachmentContainer = document.createElement('div');
     attachmentContainer.classList.add('attached-files-container');
 
