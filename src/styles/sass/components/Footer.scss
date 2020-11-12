@@ -16,27 +16,25 @@
 
     .nav-add-post {
         position: relative;
+        height: 100%;
+        width: 100%;
+        display: grid;
+        justify-items: center;
 
         .btn-container {
             border-radius: 50%;
             position: absolute;
-            bottom: 0;
+            bottom: 10px;
             height: 55px;
             width: 55px;
             overflow: hidden;
+            box-shadow: 0 0 6px 0 #00000061;
 
             button {
                 @include addPostBtn(34px);
                 width: 100%;
                 height: 100%;
-                display: grid;
-                align-items: center;
-                justify-items: center;
-
-                // .add-icon {
-                //     width: 35px;
-                //     height: 35px;
-                // }
+                text-align: center;
             }
         }
     }
@@ -49,9 +47,11 @@
         grid-area: 1 / 5;
     }
 
+    .nav-home,
+    .nav-search,
     .nav-notifs,
     .nav-message {
-        justify-self: end;
+        justify-self: center;
     }
 }
 

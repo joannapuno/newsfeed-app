@@ -45,6 +45,7 @@
             grid-template-columns: 1fr 1fr;
             
             .attachment-icons {
+                width: 125px;
                 display: grid;
                 grid-gap: 16px;
                 grid-template-columns: repeat(3, 1fr);

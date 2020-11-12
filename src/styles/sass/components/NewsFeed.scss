@@ -9,6 +9,11 @@ main {
         }
         .cards-wrapper {
             height: 100%;
+
+            @media (min-width: 501px) {
+                width: 50%;
+                margin: 0 auto;
+            }
         }
     }
 }

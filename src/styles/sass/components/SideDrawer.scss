@@ -1,7 +1,6 @@
 #side-drawer {
     position: fixed;
-    width: 380px;
-    max-width: 85%;
+    width: 220px;
     height: 100%;
     left: 0;
     top: 0;
@@ -96,7 +95,7 @@
             grid-template-columns: .15fr 1fr;
             align-items: center;
             grid-gap: 5px;
-            margin: 20px 0;
+            margin: 30px 0;
 
             .icon {
                 @include icon(15px, 15px);
