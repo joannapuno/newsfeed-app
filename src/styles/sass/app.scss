@@ -1,5 +1,23 @@
+// Base
 @import './base/variables.scss';
 @import './base/mixins.scss';
+
+// Header - Top Nav
+@import './components/Header.scss';
+
+// Side Drawer Menu
+@import './components/SideDrawer.scss';
+
+//Main Content
+@import './components/NewsFeed.scss';
+@import './components/Card.scss';
+
+// Footer - Bottom Nav
+@import './components/Footer.scss';
+
+// New Post field
+@import './components/NewPost.scss';
+
 
 ///////General///////
 html,
@@ -11,6 +29,7 @@ body {
     #wrapper {
         min-height: 100%;
         position: relative;
+        background-color: #FFFF;
 
         textarea {
             font-family: Helvetica, sans-serif; 
@@ -23,6 +42,10 @@ body {
         
         a {
             text-decoration: none;
+        }
+
+        li {
+            list-style: none;
         }
 
         h1, h2, h3, h4, h5, h6,
@@ -64,7 +87,16 @@ body {
         img {
             width: 100%;
         }
+
+        .username {
+            font-weight: 700;
+        }
     }
+}
+
+#wrapper.dark-mode {
+    color: #FFFF;
+    background: $dm-bg-color;
 }
 
 ///////Backdrop///////
@@ -79,304 +111,11 @@ body {
     z-index: 1;
 }
 
-///////Header///////
-header {
-    margin-bottom: 50px;
-
-    #top-nav {
-        @include nav(repeat(3, 1fr),50px,#FFFF);
-        @include position(fixed, 0, 0, unset, 0);
-    
-        box-shadow: 0 4px 4px 0 #ddd;
-        padding: 5px 10px;
-    
-        .side-drawer-toggle {
-            display: grid;
-            grid-template-rows: repeat(3, 1fr);
-            grid-gap: 5px;
-            padding: 10px;
-            width: 18%;
-    
-            div {
-                background-color: #DDD;
-                height: 3px;
-            }
-        }
-
-        .app-logo {
-            justify-self: center;
-
-            .icon-container {
-                width: 45px;
-                cursor: pointer;
-            }
-            svg {
-                fill: $primary-color;
-            }
-        }
-
-        .app-user {
-            justify-self: end;
-
-            .user-img-container {
-                @include userProfile(35px, 35px);
-                img {
-                    height: 100%;
-                }
-            }
-        }
-    }
-}
-
-///////Main Content///////
-#newsfeed-body {
-    background:#FFFF;
-    padding: 20px;
-    margin-bottom: 25vh;
-    //height: 150vh;
-
-    .card-item-orig {
-        display: none;
-    }
-
-    // Card
-    .cards-wrapper {
-        height: 100%;
-
-        .card-item {
-            background-color: #fff;
-            box-shadow: 0px 0px 4px 0 #d0d0d0dd;
-            display: grid;
-            padding: 15px 10px;
-            grid-gap: 10px;
-            margin: 15px 0;
-
-            // HEADER
-            .card-header {
-                display: grid;
-                grid-template-columns: 1fr 10%;
-                align-items: center;
-
-                .card-user {
-                    display: grid;
-                    grid-gap: 10px;
-                    grid-template-columns: 10% 1fr;
-                    align-items: center;
-
-                    .user-img-container {
-                        @include userProfile(30px, 30px);
-
-                        img {
-                            height: 100%;
-                        }
-                    }
-
-                    .username {
-                        font-weight: 700;
-                    }
-                }
-
-                .card-more-options {
-
-                    .toggle-icon {
-                        display: grid;
-                        grid-gap: 4px;
-                        cursor: pointer;
-
-                        div {
-                            border-radius: 50%;
-                            height: 5px;
-                            width: 5px;
-                            background: #a2b9dc;
-                        }
-                    }
-                }
-            }
-
-            // CONTENT
-            .card-content {
-                margin: 0 20px;
-
-                .date-stamp {
-                    color: #a5a5a5dd;
-                    font-size: 12px;
-                    font-weight: 100;
-                    margin-bottom: 13px;
-                }
-
-                .card-caption {
-                    color:#4a4a4add;
-                }
-
-                .card-attachment {
-                    width: 100%;
-                }
-
-                .card-attachment img {
-                    width: 100%; // make dynamic
-                }
-            }
-
-            //FOOTER
-            .card-footer {
-                margin: 0 20px;
-                .card-interact {
-                    display: grid;
-                    grid-template-columns: .5fr .5fr 1fr;
-
-                    .card-icon-action {
-                        .icon {
-                            @include icon(20px, 20px);
-
-                            svg {
-                                fill: $card-icon-color;
-                            }
-                        }
-
-                        .count {
-                            font-size: 12px;
-                            color: #a2a2a2;
-                        }
-                    }
-
-                    .likes, 
-                    .comments {
-                        display: grid;
-                        grid-template-columns: 1fr 1fr;
-                        grid-gap: 5px;
-                        align-items: center;
-                    }
-
-                    .bookmark {
-                        justify-self: end;
-                    }
-                }
-            }
-        }
-    }
-}
-
-///////Footer///////
-#bottom-nav {
-    @include nav(repeat(5, 1fr),30px,#FFFF);
-    @include position(fixed,unset,0,0,0);
-    box-shadow: 0 -4px 5px 0 #cacaca;
-    padding: 10px 20px;
-    transition: .2s ease-in;
-
-    .nav-icon {
-        @include icon(25px, 25px);
-
-        svg {
-            fill: $bottom-icon-color;
-        }
-    }
-
-    .nav-add-post {
-        position: relative;
-    }
-
-    .nav-notifs {
-        grid-area: 1 / 4;
-    }
-
-    .nav-message {
-        grid-area: 1 / 5;
-    }
-
-    .nav-notifs,
-    .nav-message {
-        justify-self: center;
-    }
-
-    .add-post-btn {
-        @include addPostBtn(34px);
-        border-radius: 50%;
-        position: absolute;
-        bottom: 0;
-        height: 55px;
-        width: 55px;
-    }
-}
-
-#bottom-nav.hide {
-    transition: 0.2s ease-in;
-    transform: translateY(100%);
-}
-
-
-///////NEW POST///////
-#new-post-container {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    transition: 0.2s ease-in;
-    transform: translateY(100%);
-    z-index: 2;
-    
-    .new-post-content {
-        background: #ffffff;
-        min-height: 155px;
-        padding: 10px 30px;
-        display: grid;
-        grid-gap: 10px;
-        box-shadow: 0 -2px 8px 0 #DDD;
-
-        .new-post-body {
-            textarea {
-                width: 100%
-            }
-
-            .attached-files-container {
-                display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
-
-                .img-container {
-                    width: 50px;
-                    height: 50px;
-                    overflow: hidden;
-                }
-            }
-        }
-        
-        .new-post-footer {
-            display: grid;
-            grid-gap: 5px;
-            grid-template-columns: 1fr 1fr;
-            
-            .attachment-icons {
-                display: grid;
-                grid-gap: 16px;
-                grid-template-columns: repeat(auto-fill, minmax(28px, 1fr));
-                
-                input[type="file"] {
-                    display: none;
-                }
-
-                .icon {
-                    @include icon(25px, 25px)
-                }
-            }
-
-            .btn-container {
-                justify-self: end;
-            }
-        }
-    }
-}
-
-#new-post-container.show {
-    transform: translateY(0);
-    transition: .2s ease-in;
-}
-
 ///////NO CONTENT///////
 #no-posts-container {
     #no-posts-view {
         display: grid;
         height: 70vh;
-        background: #FFFF;
         border: 2px dashed #DDDD;
         padding: 20px;
         border-radius: 15px;
@@ -386,15 +125,6 @@ header {
         .no-posts-content {
             display: grid;
             grid-gap: 10px;
-            .title {
-
-            }
-            .body-copy {
-
-            }
-            .add-post-btn {
-                @include addPostBtn;
-            }
         }
     }
 }

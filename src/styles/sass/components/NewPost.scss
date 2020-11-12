@@ -1,0 +1,72 @@
+#new-post-container {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    transition: 0.2s ease-in;
+    transform: translateY(100%);
+    z-index: 2;
+    
+    .new-post-content {
+        background: #ffffff;
+        min-height: 155px;
+        padding: 10px 30px;
+        display: grid;
+        grid-gap: 10px;
+        box-shadow: 0 -2px 8px 0 $shadow-color;
+
+        .new-post-body {
+            textarea {
+                width: 100%
+            }
+
+            .attached-files-container {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+
+                .img-container {
+                    width: 50px;
+                    height: 50px;
+                    overflow: hidden;
+                }
+            }
+        }
+        
+        .new-post-footer {
+            display: grid;
+            grid-gap: 5px;
+            grid-template-columns: 1fr 1fr;
+            
+            .attachment-icons {
+                display: grid;
+                grid-gap: 16px;
+                grid-template-columns: repeat(auto-fill, minmax(28px, 1fr));
+                
+                input[type="file"] {
+                    display: none;
+                }
+
+                .icon {
+                    @include icon(25px, 25px);
+
+                    svg {
+                        fill: $primary-color;
+                    }
+                }
+            }
+
+            .btn-container {
+                justify-self: end;
+            }
+        }
+    }
+}
+
+#new-post-container.show {
+    transform: translateY(0);
+    transition: .2s ease-in;
+}
+
+.new-post-content.dark-mode {
+    background: $dm-bg-color;
+}

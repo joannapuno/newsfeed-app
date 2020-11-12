@@ -1,0 +1,103 @@
+#side-drawer {
+    position: fixed;
+    width: 380px;
+    max-width: 70%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 200;
+    background-color: #272727;
+    padding: 32px 16px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease-out;
+    background-color: #FFFF;
+    transform: translateX(-100%);
+
+
+    &.open {
+        transform: translateX(0)
+    }
+    
+    &.close {
+        transform: translateX(-100%);
+    }
+
+    .side-drawer-content {
+        display: grid;
+        grid-gap: 20px;
+        
+        .app-user {
+            display: grid;
+            grid-template-columns: 25% 1fr;
+            align-items: center;
+        }
+
+        .switch-mode-toggle {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+
+            .mode-toggle-container {
+                position: relative;
+                display: inline-block;
+                width: 60px;
+                height: 25px;
+
+                input {
+                    opacity: 0;
+                }
+
+                .slider {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background-color: #ccc;
+                    transition: .4s;
+                    border-radius: 34px;
+                    cursor: pointer;
+                }
+                .slider:before {
+                    border-radius: 50%;
+                    position: absolute;
+                    content: "";
+                    height: 19px;
+                    width: 19px;
+                    left: 4px;
+                    bottom: 3px;
+                    background-color: #FFFF;
+                    transition: .4s;
+                  }
+                  
+                  input:checked + .slider {
+                    background-color: $primary-color;
+                  }
+                  
+                  input:focus + .slider {
+                    box-shadow: 0 0 1px $primary-color;
+                  }
+                  
+                  input:checked + .slider:before {
+                    transform: translateX(26px);
+                  }
+            }
+        }
+
+        .drawer-item {
+            margin: 10px 0;
+        }
+
+        .user-img-container {
+            @include userProfile(35px, 35px);
+    
+            img {
+                height: 100%;
+            }
+        }
+    }
+}
+
+#side-drawer.dark-mode {
+    background: $dm-bg-color;
+}

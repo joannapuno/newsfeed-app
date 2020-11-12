@@ -1,0 +1,51 @@
+#bottom-nav {
+    @include nav(repeat(5, 1fr),30px);
+    @include position(fixed,unset,0,0,0);
+    box-shadow: 0 -4px 5px 0 $shadow-color;
+    padding: 10px 20px;
+    transition: .2s ease-in;
+    background: #FFFF;
+
+    .nav-icon {
+        @include icon(25px, 25px);
+
+        svg {
+            fill: $bottom-icon-color;
+        }
+    }
+
+    .nav-add-post {
+        position: relative;
+    }
+
+    .nav-notifs {
+        grid-area: 1 / 4;
+    }
+
+    .nav-message {
+        grid-area: 1 / 5;
+    }
+
+    .nav-notifs,
+    .nav-message {
+        justify-self: center;
+    }
+
+    .add-post-btn {
+        @include addPostBtn(34px);
+        border-radius: 50%;
+        position: absolute;
+        bottom: 0;
+        height: 55px;
+        width: 55px;
+    }
+}
+
+#bottom-nav.hide {
+    transition: 0.2s ease-in;
+    transform: translateY(100%);
+}
+
+#bottom-nav.dark-mode {
+    background: $dm-bg-color;
+}

@@ -1,0 +1,18 @@
+main {
+    padding-bottom: 25vh;
+    
+    #newsfeed-body {
+        padding: 20px;
+
+        .card-item-orig {
+            display: none;
+        }
+        .cards-wrapper {
+            height: 100%;
+        }
+    }
+}
+
+#newsfeed-body.dark-mode {
+    background: $dm-bg-color;
+}

@@ -1,0 +1,52 @@
+header {
+    margin-bottom: 50px;
+
+    #top-nav {
+        @include nav(repeat(3, 1fr),50px);
+        @include position(fixed, 0, 0, unset, 0);
+    
+        box-shadow: 0 4px 4px 0 $shadow-color;
+        padding: 5px 10px;
+        background-color: #FFFF;
+    
+        #side-drawer-toggle {
+            display: grid;
+            grid-template-rows: repeat(3, 1fr);
+            grid-gap: 5px;
+            padding: 10px;
+            width: 18%;
+    
+            div {
+                background-color: #DDD;
+                height: 3px;
+            }
+        }
+
+        .app-logo {
+            justify-self: center;
+
+            .icon-container {
+                width: 45px;
+                cursor: pointer;
+            }
+            svg {
+                fill: $primary-color;
+            }
+        }
+
+        .app-user {
+            justify-self: end;
+
+            .user-img-container {
+                @include userProfile(35px, 35px);
+                img {
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
+
+#top-nav.dark-mode {
+    background: $dm-bg-color;
+}

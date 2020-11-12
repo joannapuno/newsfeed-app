@@ -22,10 +22,8 @@
 
 
 //Specific Component Mixins
-@mixin nav($cols, $height, $bgColor) {
+@mixin nav($cols, $height) {
     @include grid(grid-template-columns, $cols);
-    
-    background: $bgColor;
     height: $height;
     align-items: center;
 }

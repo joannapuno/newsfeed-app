@@ -9,14 +9,15 @@ const publishPostBtn = document.getElementById('publish-post-btn');
 const newPostCaption = document.getElementById('txt-new-post');
 const newPostAttachment = document.getElementById('post-attachment');
 
+const backdrop = document.getElementById('backdrop');
 ///// Show Add New Post Field /////
 
 //Backdrop
-const toggleBackdropHandler = () => {
-    const backdrop = document.getElementById('backdrop');
+const toggleBackdropHandler = component => {
     backdrop.style.display = backdrop.style.display === 'block' ? 'none' : 'block';
 
-    backdrop.addEventListener('click', toggleAddPostFieldHandler, false);
+    // backdrop.addEventListener('click', toggleAddPostFieldHandler, false);
+     backdrop.addEventListener('click', toggleSideDrawerHandler, false);
 }
 const showAddNewFormHandler = () => {
     let previewImages = document.querySelector('.new-post-caption').querySelector('.attached-files-container');
@@ -55,7 +56,7 @@ const toggleAddPostFieldHandler = () => {
 const createImgSrcHandler = (files, isPreview) => {
     let previewImages = document.querySelector('.new-post-caption').querySelector('.attached-files-container');
     previewImages != null ? previewImages.remove() : null;
-    
+
     let attachmentContainer = document.createElement('div');
     attachmentContainer.classList.add('attached-files-container');
 
@@ -133,8 +134,46 @@ publishPostBtn.addEventListener('click', evt => {
     toggleAddPostFieldHandler();
 })
 
+///// Toggle Side Menu /////
+const sideDrawer = document.getElementById('side-drawer');
+const sideDrawerToggle = document.getElementById('side-drawer-toggle');
 
+const toggleSideDrawerHandler = () => {
+    toggleBackdropHandler();
 
+    if(sideDrawer.classList.contains('open')) {
+        sideDrawer.classList.remove('open')
+        sideDrawer.classList.add('close')
+    } else {
+        sideDrawer.classList.remove('close')
+        sideDrawer.classList.add('open')
+    }
+}
+sideDrawerToggle.addEventListener('click', toggleSideDrawerHandler, false);
 
+///// Toggle Mode /////
+const modeToggle = document.getElementById('mode-toggle');
+const customizeEls = document.getElementsByClassName('changeable-item');
 
+const toggleModeHandler = () => {
+    for(let el of customizeEls) {
+        if(el.classList.contains('dark-mode')) {
+            el.classList.remove('dark-mode');
+        } else {
+            el.classList.add('dark-mode');
+        }
+    };
 
+    // customizeEls.forEach(el => {
+    //     if(el.classList.contains('dark-mode')) {
+    //         el.classList.remove('dark-mode');
+    //     } else {
+    //         el.classList.add('dark-mode');
+    //     }
+    // });
+}
+
+modeToggle.addEventListener('change', evt => {
+    evt.preventDefault();
+    toggleModeHandler()
+});
