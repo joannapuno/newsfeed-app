@@ -319,10 +319,6 @@ main #newsfeed-body .cards-wrapper {
   align-items: center;
   justify-items: center;
 }
-#bottom-nav .nav-add-post .btn-container button .add-icon {
-  width: 35px;
-  height: 35px;
-}
 #bottom-nav .nav-notifs {
   grid-area: 1/4;
 }
