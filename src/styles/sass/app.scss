@@ -25,6 +25,8 @@ body {
     height: 100%;
     font-family: Helvetica, sans-serif; 
     margin: 0;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
 
     #wrapper {
         min-height: 100%;
@@ -116,15 +118,14 @@ body {
     #no-posts-view {
         display: grid;
         height: 70vh;
-        border: 2px dashed #DDDD;
         padding: 20px;
-        border-radius: 15px;
         align-items: center;
         text-align: center;
 
         .no-posts-content {
             display: grid;
             grid-gap: 10px;
+            justify-items: center;
         }
     }
 }
