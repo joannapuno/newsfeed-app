@@ -1,7 +1,7 @@
 #side-drawer {
     position: fixed;
     width: 380px;
-    max-width: 70%;
+    max-width: 85%;
     height: 100%;
     left: 0;
     top: 0;
@@ -22,14 +22,21 @@
         transform: translateX(-100%);
     }
 
+    .side-menu-main,
+    .side-menu-settings {
+        font-size: 14px;
+        color: $primary-text-color;
+    }
+
     .side-drawer-content {
         display: grid;
         grid-gap: 20px;
-        
+
         .app-user {
             display: grid;
             grid-template-columns: 25% 1fr;
             align-items: center;
+            grid-gap: 10px;
         }
 
         .switch-mode-toggle {
@@ -40,8 +47,8 @@
             .mode-toggle-container {
                 position: relative;
                 display: inline-block;
-                width: 60px;
-                height: 25px;
+                width: 46px;
+                height: 18px;
 
                 input {
                     opacity: 0;
@@ -62,30 +69,38 @@
                     border-radius: 50%;
                     position: absolute;
                     content: "";
-                    height: 19px;
-                    width: 19px;
+                    height: 12px;
+                    width: 12px;
                     left: 4px;
                     bottom: 3px;
                     background-color: #FFFF;
                     transition: .4s;
-                  }
-                  
-                  input:checked + .slider {
+                    }
+                    
+                    input:checked + .slider {
                     background-color: $primary-color;
-                  }
-                  
-                  input:focus + .slider {
+                    }
+                    
+                    input:focus + .slider {
                     box-shadow: 0 0 1px $primary-color;
-                  }
-                  
-                  input:checked + .slider:before {
+                    }
+                    
+                    input:checked + .slider:before {
                     transform: translateX(26px);
-                  }
+                    }
             }
         }
 
         .drawer-item {
-            margin: 10px 0;
+            display: grid;
+            grid-template-columns: .15fr 1fr;
+            align-items: center;
+            grid-gap: 5px;
+            margin: 20px 0;
+
+            .icon {
+                @include icon(15px, 15px);
+            }
         }
 
         .user-img-container {
@@ -95,10 +110,16 @@
                 height: 100%;
             }
         }
+        
     }
 }
 
 #side-drawer.dark-mode {
-    background: $dm-bg-color;
+    background: $dm-pop-bg-color;
+
+    .side-menu-main,
+    .side-menu-settings {
+        color: $dm-text-color;
+    }
 }
 

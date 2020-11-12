@@ -1,4 +1,5 @@
 #new-post-container {
+    background: #ffffff;
     position: fixed;
     bottom: 0;
     right: 0;
@@ -8,14 +9,20 @@
     z-index: 2;
     
     .new-post-content {
-        background: #ffffff;
         min-height: 155px;
         padding: 10px 30px;
         display: grid;
         grid-gap: 10px;
         box-shadow: 0 -2px 8px 0 $shadow-color;
 
+        .new-post-header {
+            font-size: 14px;
+            color: $primary-color;
+        }
+
         .new-post-body {
+            margin: 15px 0;
+
             textarea {
                 width: 100%
             }
@@ -40,7 +47,7 @@
             .attachment-icons {
                 display: grid;
                 grid-gap: 16px;
-                grid-template-columns: repeat(auto-fill, minmax(28px, 1fr));
+                grid-template-columns: repeat(3, 1fr);
                 
                 input[type="file"] {
                     display: none;
@@ -67,6 +74,8 @@
     transition: .2s ease-in;
 }
 
-.new-post-content.dark-mode {
-    background: $dm-bg-color;
+#new-post-container.dark-mode,
+#new-post-container.dark-mode textarea {
+    background: $dm-pop-bg-color;
+    color: #fff;
 }

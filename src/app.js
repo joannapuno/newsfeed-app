@@ -14,10 +14,23 @@ const backdrop = document.getElementById('backdrop');
 
 //Backdrop
 const toggleBackdropHandler = component => {
-    //backdrop.style.display = backdrop.style.display === 'block' ? 'none' : 'block';
+    backdrop.style.display = backdrop.style.display === 'block' ? 'none' : 'block';
 
-    // backdrop.addEventListener('click', toggleAddPostFieldHandler, false);
-     backdrop.addEventListener('click', toggleSideDrawerHandler, false);
+    switch(component) {
+        case 'addpost': 
+            backdrop.onclick = evt => {
+                toggleAddPostFieldHandler();
+            };
+            break;
+        case 'menu':
+            backdrop.onclick = evt => { 
+                toggleSideDrawerHandler();
+            }
+            break;
+        
+        default:
+            backdrop.style.display === 'none';
+    }
 }
 const showAddNewFormHandler = () => {
     let previewImages = document.querySelector('.new-post-caption').querySelector('.attached-files-container');
@@ -42,7 +55,7 @@ const showAddNewFormHandler = () => {
 }
 
 const toggleAddPostFieldHandler = () => {
-    toggleBackdropHandler();
+    toggleBackdropHandler('addpost');
     
     if (!newPostBox.classList.contains('show')) {
         bottomNav.classList.add('hide');
@@ -139,7 +152,7 @@ const sideDrawer = document.getElementById('side-drawer');
 const sideDrawerToggle = document.getElementById('side-drawer-toggle');
 
 const toggleSideDrawerHandler = () => {
-    toggleBackdropHandler();
+    toggleBackdropHandler('menu');
 
     if(sideDrawer.classList.contains('open')) {
         sideDrawer.classList.remove('open')
