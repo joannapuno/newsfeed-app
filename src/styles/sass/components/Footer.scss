@@ -32,10 +32,8 @@
             bottom: 10px;
             height: 55px;
             width: 55px;
-            display: grid;
-            align-items: center;
-            justify-items: center;
-            // text-align: center;
+            text-align: center;
+            padding: 0;
 
             button {
                 @include addPostBtn(34px);
