@@ -78,6 +78,7 @@
 
             .card-icon-action {
                 .icon {
+                    cursor: pointer;
                     @include icon(20px, 20px);
 
                     svg {
@@ -99,6 +100,12 @@
                 align-items: center;
             }
 
+            .like-btn {
+                &.liked svg {
+                    fill: red;
+                }
+            }
+
             .bookmark {
                 justify-self: end;
             }
@@ -111,5 +118,13 @@
 
     .card-caption {
         color: $dm-text-color;
+    }
+
+    .card-interact {
+        .like-btn {
+            &.liked svg {
+                fill: #FFFF;
+            }
+        }
     }
 }

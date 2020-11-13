@@ -256,6 +256,7 @@ main #newsfeed-body .cards-wrapper {
   grid-gap: 10px;
 }
 .card-item .card-footer .card-interact .card-icon-action .icon {
+  cursor: pointer;
   width: 20px;
   height: 20px;
 }
@@ -273,6 +274,9 @@ main #newsfeed-body .cards-wrapper {
   grid-gap: 5px;
   align-items: center;
 }
+.card-item .card-footer .card-interact .like-btn.liked svg {
+  fill: red;
+}
 .card-item .card-footer .card-interact .bookmark {
   justify-self: end;
 }
@@ -282,6 +286,9 @@ main #newsfeed-body .cards-wrapper {
 }
 .card-item.dark-mode .card-caption {
   color: #929292;
+}
+.card-item.dark-mode .card-interact .like-btn.liked svg {
+  fill: #FFFF;
 }
 
 #bottom-nav {

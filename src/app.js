@@ -99,6 +99,8 @@ const createNewPostHandler = formData => {
     const dateStamp = card_c.querySelector('.date-stamp');
     const caption = card_c.querySelector('.caption');
     const attachment = card_c.querySelector('.card-attachment');
+    const likeBtn = card_c.querySelector('.like-btn');
+    const likeCounts = card_c.querySelector('.likes').querySelector('.count');
 
 
     dateStamp.innerText = formData.date;
@@ -118,6 +120,10 @@ const createNewPostHandler = formData => {
     }
 
     cardsWrapper.prepend(card_c);
+
+    likeBtn.addEventListener('click', evt => {
+        toggleLikeBtnHandler(likeBtn,likeCounts);
+    }, false);
 
 };
 
@@ -182,3 +188,20 @@ modeToggle.addEventListener('change', evt => {
     evt.preventDefault();
     toggleModeHandler()
 });
+
+///// Toggle Like Btn /////
+const toggleLikeBtnHandler = (icon, countEl) => {
+    let countText = Number(countEl.innerText);
+
+    if(icon.classList.contains('liked')) {
+        icon.classList.remove('liked');
+        countText--;
+    } else {
+        icon.classList.add('liked');
+        countText++;
+    }
+    countEl.innerText = countText.toString();
+};
+
+
+    
