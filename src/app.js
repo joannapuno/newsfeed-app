@@ -1,6 +1,6 @@
 const newPostBox = document.getElementById('new-post-container');
 const bottomNav = document.getElementById('bottom-nav');
-const addPostBtns = document.querySelectorAll('.add-post-btn');
+const addPostBtn = document.getElementById('add-post-btn');
 const dismissAddNewBtn = document.getElementById('dismiss-new-post-btn');
 const noPostsView = document.getElementById('no-posts-container');
 
@@ -128,9 +128,9 @@ const createNewPostHandler = formData => {
 };
 
 
-addPostBtns.forEach(btn => {
-    btn.addEventListener('click', showAddNewFormHandler, false)
-})
+
+addPostBtn.addEventListener('click', showAddNewFormHandler, false)
+
 dismissAddNewBtn.addEventListener('click', toggleAddPostFieldHandler, false);
 
 publishPostBtn.addEventListener('click', evt => {
