@@ -194,10 +194,14 @@ main #newsfeed-body .cards-wrapper {
 .card-item {
   display: grid;
   grid-gap: 25px;
+  transition: 0.5s ease-in;
   background-color: #fff;
-  box-shadow: 0px 0px 4px 0 #00000030;
+  box-shadow: 0px 0px 6px 0 #3181fd;
   padding: 15px 10px;
   margin: 15px 0;
+}
+.card-item.no-highlight {
+  box-shadow: 0px 0px 4px 0 #00000030;
 }
 .card-item .card-header {
   display: grid;

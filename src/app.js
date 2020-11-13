@@ -129,6 +129,11 @@ const createNewPostHandler = formData => {
         toggleLikeBtnHandler(likeBtn,likeCounts);
     }, false);
 
+    //Highlight newly added Quack
+    setTimeout(function() { 
+        card_c.classList.add('no-highlight');
+    }, 1000);
+
 };
 
 // SAVE/PUBLISH New Post Form
@@ -147,6 +152,9 @@ publishPostBtn.addEventListener('click', evt => {
 
     createNewPostHandler(formData);
     toggleAddPostFieldHandler();
+
+    // Scroll to Top to see newest Quack
+    window.scrollTo(0, 0);
 })
 
 // Create URL Source for Images and return

@@ -1,9 +1,14 @@
 .card-item {
     @include grid(25px);
+    transition: .5s ease-in;
     background-color: #fff;
-    box-shadow: 0px 0px 4px 0 $shadow-color;
+    box-shadow: 0px 0px 6px 0 $primary-color;
     padding: 15px 10px;
     margin: 15px 0;
+
+    &.no-highlight {
+        box-shadow: 0px 0px 4px 0 $shadow-color;
+    }
 
     // HEADER
     .card-header {
