@@ -35,12 +35,13 @@
             width: 55px;
             overflow: hidden;
             box-shadow: 0 0 6px 0 #00000061;
+            text-align: center;
 
             button {
                 @include addPostBtn(34px);
                 width: 100%;
                 height: 100%;
-                text-align: center;
+                display: inline-block;
             }
         }
     }
