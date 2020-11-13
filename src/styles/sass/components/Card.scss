@@ -1,21 +1,17 @@
 .card-item {
+    @include grid(25px);
     background-color: #fff;
     box-shadow: 0px 0px 4px 0 $shadow-color;
-    display: grid;
     padding: 15px 10px;
-    grid-gap: 25px;
     margin: 15px 0;
 
     // HEADER
     .card-header {
-        display: grid;
-        grid-template-columns: 1fr 10%;
+        @include grid(0, grid-template-columns, 1fr 10%);
         align-items: center;
 
         .card-user {
-            display: grid;
-            grid-gap: 15px;
-            grid-template-columns: 30px 1fr;
+            @include grid(10px, grid-template-columns, 30px 1fr);
             align-items: center;
 
             .user-img-container {
@@ -30,8 +26,7 @@
         .card-more-options {
 
             .toggle-icon {
-                display: grid;
-                grid-gap: 4px;
+                @include grid(4px);
                 cursor: pointer;
 
                 div {
@@ -64,17 +59,16 @@
         }
 
         .card-attachment img {
-            width: 100%; // make dynamic
+            width: 100%;
         }
     }
 
     //FOOTER
     .card-footer {
         margin: 0 20px;
+
         .card-interact {
-            display: grid;
-            grid-template-columns: .5fr .5fr 1fr;
-            grid-gap: 10px;
+            @include grid(10px, grid-template-columns, .5fr .5fr 1fr);
 
             .card-icon-action {
                 .icon {
@@ -94,9 +88,7 @@
 
             .likes, 
             .comments {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                grid-gap: 5px;
+                @include grid(5px, grid-template-columns, 1fr 1fr);
                 align-items: center;
             }
 
@@ -113,6 +105,7 @@
     }
 }
 
+//Dark Mode
 .card-item.dark-mode {
     background: $dm-pop-bg-color;
 

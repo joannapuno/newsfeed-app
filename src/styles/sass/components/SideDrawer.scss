@@ -1,24 +1,20 @@
 #side-drawer {
-    position: fixed;
+    @include position(fixed,0,unset,unset,0);
+    @include translate('x', -100%, 0.3s ease-out);
     width: 220px;
     height: 100%;
-    left: 0;
-    top: 0;
     z-index: 200;
-    background-color: #272727;
     padding: 32px 16px;
     box-sizing: border-box;
-    transition: transform 0.3s ease-out;
     background-color: #FFFF;
-    transform: translateX(-100%);
 
 
     &.open {
-        transform: translateX(0)
+        @include translate('x', 0);
     }
     
     &.close {
-        transform: translateX(-100%);
+        @include translate('x', -100%);
     }
 
     .side-menu-main,
@@ -28,23 +24,19 @@
     }
 
     .side-drawer-content {
-        display: grid;
-        grid-gap: 20px;
+        @include grid(20px);
 
         .app-user {
-            display: grid;
-            grid-template-columns: 25% 1fr;
+            @include grid(10px, grid-template-columns, 25% 1fr);
             align-items: center;
-            grid-gap: 10px;
         }
 
         .switch-mode-toggle {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+            @include grid(0, grid-template-columns, 1fr 1fr);
             align-items: center;
 
             .mode-toggle-container {
-                position: relative;
+                @include position(relative);
                 display: inline-block;
                 width: 46px;
                 height: 18px;
@@ -54,47 +46,41 @@
                 }
 
                 .slider {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
+                    @include position(absolute,0,0,0,0);
                     background-color: #ccc;
                     transition: .4s;
                     border-radius: 34px;
                     cursor: pointer;
                 }
                 .slider:before {
+                    @include position(absolute);
                     border-radius: 50%;
-                    position: absolute;
                     content: "";
                     height: 12px;
                     width: 12px;
                     left: 4px;
                     bottom: 3px;
                     background-color: #FFFF;
-                    transition: .4s;
-                    }
+                    transition: $normal-transition;
+                }
                     
-                    input:checked + .slider {
+                input:checked + .slider {
                     background-color: $primary-color;
-                    }
-                    
-                    input:focus + .slider {
+                }
+                
+                input:focus + .slider {
                     box-shadow: 0 0 1px $primary-color;
-                    }
-                    
-                    input:checked + .slider:before {
-                    transform: translateX(26px);
-                    }
+                }
+                
+                input:checked + .slider:before {
+                    @include translate('x', 26px);
+                }
             }
         }
 
         .drawer-item {
-            display: grid;
-            grid-template-columns: .15fr 1fr;
+            @include grid(5px, grid-template-columns, .15fr 1fr);
             align-items: center;
-            grid-gap: 5px;
             margin: 30px 0;
 
             .icon {
@@ -119,6 +105,8 @@
     }
 }
 
+
+//Dark mode
 #side-drawer.dark-mode {
     background: $dm-pop-bg-color;
 

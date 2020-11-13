@@ -2,7 +2,7 @@ header {
     margin-bottom: 50px;
 
     #top-nav {
-        @include nav(repeat(3, 1fr),50px);
+        @include nav(repeat(3, 1fr), 50px);
         @include position(fixed, 0, 0, unset, 0);
     
         box-shadow: 0 4px 4px 0 $shadow-color;
@@ -10,9 +10,7 @@ header {
         background-color: #FFFF;
     
         #side-drawer-toggle {
-            display: grid;
-            grid-template-rows: repeat(3, 1fr);
-            grid-gap: 5px;
+            @include grid(5px, grid-template-rows, repeat(3, 1fr));
             padding: 10px;
             width: 30px;
     
@@ -39,6 +37,7 @@ header {
 
             .user-img-container {
                 @include userProfile(35px, 35px);
+                
                 img {
                     height: 100%;
                 }
@@ -47,6 +46,7 @@ header {
     }
 }
 
+//Dark mode
 #top-nav.dark-mode {
     background: $dm-bg-color;
 }

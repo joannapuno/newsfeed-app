@@ -100,6 +100,7 @@ body {
     }
 }
 
+//Dark Mode
 #wrapper.dark-mode {
     color: #FFFF;
     background: $dm-bg-color;
@@ -107,28 +108,23 @@ body {
 
 ///////Backdrop///////
 #backdrop {
+    @include position(fixed,0,0,0,0);
     display: none;
     background: #0b0e2b8a;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
     z-index: 1;
 }
 
 ///////NO CONTENT///////
 #no-posts-container {
     #no-posts-view {
-        display: grid;
+        @include grid();
         height: 70vh;
         padding: 20px;
         align-items: center;
         text-align: center;
 
         .no-posts-content {
-            display: grid;
-            grid-gap: 10px;
+            @include grid(10px);
             justify-items: center;
 
             .img-container {

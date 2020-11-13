@@ -1,18 +1,13 @@
 #new-post-container {
+    @include position(fixed,unset,0,0,0);
+    @include translate('y', 100%, $normal-transition);
     background: #ffffff;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    transition: 0.2s ease-in;
-    transform: translateY(100%);
     z-index: 2;
     
     .new-post-content {
+        @include grid(10px);
         min-height: 155px;
         padding: 10px 30px;
-        display: grid;
-        grid-gap: 10px;
         box-shadow: 0 -2px 8px 0 $shadow-color;
 
         .new-post-header {
@@ -28,8 +23,7 @@
             }
 
             .attached-files-container {
-                display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+                @include grid(0, grid-template-columns, repeat(auto-fill, minmax(50px, 1fr)));
 
                 .img-container {
                     width: 50px;
@@ -40,15 +34,11 @@
         }
         
         .new-post-footer {
-            display: grid;
-            grid-gap: 5px;
-            grid-template-columns: 1fr 1fr;
+            @include grid(5px, grid-template-columns, 1fr 1fr);
             
             .attachment-icons {
+                @include grid(16px, grid-template-columns, repeat(3, 1fr));
                 width: 125px;
-                display: grid;
-                grid-gap: 16px;
-                grid-template-columns: repeat(3, 1fr);
                 
                 input[type="file"] {
                     display: none;
@@ -71,10 +61,10 @@
 }
 
 #new-post-container.show {
-    transform: translateY(0);
-    transition: .2s ease-in;
+    @include translate('y', 0, $normal-transition);
 }
 
+//Dark mode
 #new-post-container.dark-mode,
 #new-post-container.dark-mode textarea {
     background: $dm-pop-bg-color;

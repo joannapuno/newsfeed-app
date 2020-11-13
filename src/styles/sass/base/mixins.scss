@@ -1,5 +1,11 @@
 // General Mixins
-@mixin position($position, $top, $right, $bottom: unset, $left: unset){
+@mixin grid($gap: null, $direction: null, $values: null) {
+    display: grid;
+    grid-gap: $gap;
+    #{$direction}: $values;
+}
+
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
     position: $position;
     top: $top;
     right: $right;
@@ -7,29 +13,22 @@
     left: $left;
 }
 
-@mixin grid($direction: 'false', $values: 'false', $gridArea: 'false', $gap: 0) {
-    display: grid;
-    grid-gap: $gap;
+@mixin translate($direction, $value: null, $duration: null) {
 
-    @if($direction and $values) {
-        #{$direction}: $values;
+    @if($direction == 'x') {
+        transform: translateX($value);
+    } @else {
+        transform: translateY($value);
     }
 
-    @if($gridArea){
-        grid-area: $gridArea;
-    }
+    transition: $duration;
 }
-
 
 //Specific Component Mixins
 @mixin nav($cols, $height) {
-    @include grid(grid-template-columns, $cols);
+    @include grid(0, grid-template-columns, $cols);
     height: $height;
     align-items: center;
-}
-
-@mixin addPostBtn($fontSize: 16px) {
-    font-size: $fontSize;
 }
 
 @mixin icon($width, $height) {
