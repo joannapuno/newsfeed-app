@@ -531,6 +531,38 @@ body #wrapper .username {
   background: #282946;
 }
 
+#app-opening {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  opacity: 1;
+  transition: 0.5s ease-in;
+  align-items: center;
+  justify-items: center;
+  background: #FFFF;
+  z-index: 1;
+}
+#app-opening.hide {
+  opacity: 0;
+}
+#app-opening .icon-container {
+  height: 80px;
+  width: 80px;
+  margin-bottom: 20px;
+}
+#app-opening .icon-container svg {
+  fill: #3181fd;
+  height: 100%;
+}
+#app-opening .app-title {
+  color: #3181fd;
+  font-weight: 700;
+  text-align: center;
+}
+
 #backdrop {
   position: fixed;
   top: 0;

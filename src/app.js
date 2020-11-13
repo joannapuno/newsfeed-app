@@ -1,9 +1,16 @@
 // ************************* General ************************* //
 
 //Variables
+const appOpeningView = document.getElementById('app-opening');
 const noPostsView = document.getElementById('no-posts-container');
 const backdrop = document.getElementById('backdrop');
 const bottomNav = document.getElementById('bottom-nav');
+
+
+//App Opening Sequence
+setTimeout(function() { 
+    appOpeningView.classList.add('hide');
+}, 2000);
 
 // Backdrop
 const toggleBackdropHandler = component => {
@@ -26,6 +33,7 @@ const toggleBackdropHandler = component => {
             backdrop.style.display === 'none';
     }
 }
+
 
 // ************************* Show New Post Input + Add new Post ************************* //
 

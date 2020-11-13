@@ -105,6 +105,43 @@ body {
     color: #FFFF;
     background: $dm-bg-color;
 }
+///////Opening Image///////
+#app-opening {
+    @include position(fixed,0,0,0,0);
+    @include grid();
+    opacity: 1;
+    transition: .5s ease-in;
+    align-items: center;
+    justify-items: center;
+    background: #FFFF;
+    z-index: 1;
+
+    &.hide {
+        opacity: 0;
+    }
+    
+
+    .icon-container {
+        height: 80px;
+        width: 80px;
+        margin-bottom: 20px;
+
+        svg {
+            fill: $primary-color;
+            height: 100%;
+        }
+    }
+
+    .app-title {
+        color: $primary-color;
+        font-weight: 700;
+        text-align: center;
+    }
+}
+
+
+
+
 
 ///////Backdrop///////
 #backdrop {
