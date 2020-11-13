@@ -35,6 +35,11 @@
             text-align: center;
             padding: 0;
 
+            &:focus,
+            &:active {
+                outline: none;
+            }
+
             button {
                 box-shadow: 0 0 6px 0 $shadow-color;
                 width: 100%;
@@ -43,6 +48,12 @@
                 border-radius: 50%;
                 padding: 0;
                 font-size: 34px;
+
+                &:focus,
+                &:active {
+                    outline: none;
+                }
+
             }
         }
     }

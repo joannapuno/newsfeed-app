@@ -38,6 +38,11 @@ body {
             border: none;
             min-height: 70px;
             background: #FFFF;
+
+            &:focus,
+            &:active {
+                outline: none; //just for mobile
+            }
         }
         
         a {
