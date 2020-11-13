@@ -542,10 +542,11 @@ body #wrapper .username {
   justify-items: center;
   background: #FFFF;
   z-index: 1;
+  padding: 40% 0;
 }
 #app-opening.hide {
   opacity: 0;
-  z-index: 0;
+  z-index: -1;
 }
 #app-opening .icon-container {
   height: 80px;

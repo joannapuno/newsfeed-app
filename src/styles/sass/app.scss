@@ -113,10 +113,11 @@ body {
     justify-items: center;
     background: #FFFF;
     z-index: 1;
+    padding: 40% 0; // for safari
 
     &.hide {
         opacity: 0;
-        z-index: 0;
+        z-index: -1;
     }
     
 
