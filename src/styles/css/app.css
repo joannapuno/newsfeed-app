@@ -549,11 +549,11 @@ body #wrapper .username {
   display: grid;
   opacity: 1;
   transition: 0.5s ease-in;
-  align-items: center;
+  align-content: center;
   justify-items: center;
   background: #FFFF;
   z-index: 1;
-  padding: 40% 0;
+  padding: 35% 0;
 }
 #app-opening.hide {
   opacity: 0;
