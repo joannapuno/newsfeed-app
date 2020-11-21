@@ -18,4 +18,4 @@ Clicking Backdrop
 
 ***Some things I’ve noticed that I’d like to fix:**
 - Add Button “+” icon not vertically entered on Safari browsers
-- At times, the Dark Mode toggle gets “un-toggled”. I haven’t been able to re-create this bug, but if you do, please let me know the steps you did to re-create it.
+- At times, the Dark Mode toggle gets “un-toggled”. I haven’t been able to re-create this bug, but if you do, please let me know the steps you did to re-create it. 
