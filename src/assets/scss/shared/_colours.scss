@@ -1,0 +1,59 @@
+$attributes:(
+    "text": "color",
+    "bg": "background-color"
+);
+
+$primaries: (
+    "eggshell": $eggshell,
+    "terracotta": $terracotta,
+    "midnight": $midnight,
+    "seaweed": $seaweed,
+    "champagne":$champagne
+);
+
+$neutrals: (
+    "50": $neutral-50,
+    "100": $neutral-100,
+    "200": $neutral-200,
+    "300": $neutral-300,
+    "400": $neutral-400,
+    "500": $neutral-500,
+    "600": $neutral-600,
+    "700": $neutral-700,
+    "800": $neutral-800
+);
+
+$white: #FFFF;
+$black: #333333;
+
+.text-white {
+    color: $white
+}
+.bg-white {
+    background-color: $white;
+}
+
+.text-black {
+    color: $white
+}
+.bg-black {
+    background-color: $black;
+}
+
+@each $shade, $hex in $neutrals {
+    @each $label, $attr in $attributes {
+        .#{$label}-neutral-#{$shade} {
+            // target both text and bg color
+            #{$attr}: $hex;
+        }
+    }
+}
+
+@each $shade, $hex in $primaries {
+    @each $label, $attr in $attributes {
+        .#{$label}-primary-#{$shade} {
+            // target both text and bg color
+            #{$attr}: $hex;
+        }
+    }
+}

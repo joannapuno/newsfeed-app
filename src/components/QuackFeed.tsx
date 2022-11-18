@@ -30,7 +30,7 @@ function QuackContainer() {
     })
 
     return(
-        <main className="quack-container">
+        <main className="content">
             { quackEls }
         </main>
     )

@@ -1,0 +1,33 @@
+$font-sizes: (
+    "xs": 10,
+    "sm": 12,
+    "normal": 16,
+    "md": 18,
+    "lg": 20,
+    "xl": 24
+);
+
+$font-weights: (
+    "light": 200,
+    "regular": 400,
+    "bold": 600,
+    "chonk": 800,
+);
+
+@each $size-name, $size in $font-sizes {
+    .text-#{$size-name} {
+        font-size: toRem($size);
+    }
+
+    @each $weight-name, $weight in $font-weights {
+        .text-#{$weight-name} {
+            font-weight: $weight;
+        }
+
+        // If combination of size and weight
+        .text-#{$size-name}-#{$weight-name} {
+            font-size: toRem($size);
+            font-weight: $weight;
+        }
+    }
+}

@@ -1,0 +1,124 @@
+$font-family: 'Montserrat', 'Arial', sans-serif;
+
+$eggshell: #F4F1DE;
+$terracotta: #E07A5F;
+$midnight: #3D405B;
+$seaweed: #81B29A;
+$champagne: #F2CC8F;
+
+$white: #FFFF;
+$black: #333333;
+
+// Neutrals
+$neutral-50: #F5F5F5;
+$neutral-100: #ECECEC;
+$neutral-200: #DFDFDF;
+$neutral-300: #CECECE;
+$neutral-400: #BCBCBC;
+$neutral-500: #A3A3A3;
+$neutral-600: #989595;
+$neutral-700: #828282;
+$neutral-800: #616161;
+
+// Reds
+$red-50: #FFEDE9;
+$red-100: #FCD9D1;
+$red-200: #F2B5A6;
+$red-300: #F0896E;
+$red-400: #EC6A48;
+$red-500: #DA4B25;
+$red-600: #BF2C06;
+$red-700: #9E2404;
+$red-800: #5D1300;
+
+// Greens
+$green-50: #E3FFF1;
+$green-100: #B7F5D7;
+$green-200: #A8ECCB;
+$green-300: #80DCB0;
+$green-400: #5FD69C;
+$green-500: #45CE8B;
+$green-600: #21BB70;
+$green-700: #0DA058;
+$green-800: #007E41;
+
+// Blues
+$blue-50: #ECEEFF;
+$blue-100: #D0D4FF;
+$blue-200: #C0C5FD;
+$blue-300: #9DA4F0;
+$blue-400: #7E87EB;
+$blue-500: #6671E4;
+$blue-600: #555FCF;
+$blue-700: #3D47A6;
+$blue-800: #212B86;
+
+// Yellows
+$yellow-50: #FFF6E8;
+$yellow-100: #FFEBCB;
+$yellow-200: #FFDFAC;
+$yellow-300: #FED085;
+$yellow-400: #FCBF5F;
+$yellow-500: #FFAF30;
+$yellow-600: #ED9C1C;
+$yellow-700: #D28100;
+$yellow-800: #AA6800;
+
+// Oranges
+$orange-50: #FFEEDE;
+$orange-100: #FEE4CB;
+$orange-200: #FFD4AD;
+$orange-300: #F9C08C;
+$orange-400: #FFA959;
+$orange-500: #FC9638;
+$orange-600: #E77D1B;
+$orange-700: #D16908;
+$orange-800: #9E4C00;
+
+// Magentas
+$magenta-50: #FFE8FB;
+$magenta-100: #FFD9F9;
+$magenta-200: #F4C5ED;
+$magenta-300: #E9A0DE;
+$magenta-400: #D989CD;
+$magenta-500: #D06CC1;
+$magenta-600: #B74CA7;
+$magenta-700: #983589;
+$magenta-800: #801F71;
+
+// Teals
+$teal-50: #DCFFF9;
+$teal-100: #C2F3EB;
+$teal-200: #9FEBDF;
+$teal-300: #7EE0D1;
+$teal-400: #4ECCB8;
+$teal-500: #36C3AD;
+$teal-600: #1DAA94;
+$teal-700: #0A8E7A;
+$teal-800: #016A5A;
+
+// Sizes
+$sizes: (
+    0, 
+    2, 
+    4, 
+    8, 
+    12, 
+    16, 
+    20, 
+    24, 
+    28, 
+    32, 
+    36, 
+    40, 
+    44, 
+    48, 
+    52, 
+    56, 
+    60,
+    64,
+    68
+);
+
+// Top nav and bottom nav heights
+$nav-height: 1rem;

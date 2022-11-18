@@ -1,0 +1,43 @@
+.top-header {
+    @extend .flex-center;
+    padding: 1rem;
+    background-color: $neutral-50;
+    position: sticky;
+    top: 0;
+    border-bottom: 1px solid $neutral-200;
+    height: $nav-height;
+
+    &__links {
+        list-style: none;
+        display: flex;
+        gap: 1rem;
+
+        a {
+            text-decoration: none;
+            color: $neutral-700;
+
+            &:hover,
+            &:active {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .quack-it-search {
+        grid-area: 1/3;
+    }
+}
+
+.bottom-nav {
+    padding: 1rem;
+    background-color: $neutral-50;
+    position: sticky;
+    bottom: 0;
+    border-top: 1px solid $neutral-200;
+    height: $nav-height;
+    &__links {
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
+    }
+}

@@ -1,0 +1,69 @@
+/*****************
+*
+* SPACINGS
+*
+******************/
+.mx-auto {
+    margin: 0 auto;
+}
+.my-auto {
+    margin: auto 0;
+}
+@each $size in $sizes {
+    $newSize: toRem($size);
+
+    // gaps
+    .gap-#{$size} {
+        gap: $newSize;
+    }
+
+    // paddings
+    .p-#{$size} {
+        padding: $newSize;
+    }
+    .pt-#{$size} {
+        padding-top: $newSize;
+    }
+    .pb-#{$size} {
+        padding-bottom: $newSize;
+    }
+    .pl-#{$size} {
+        padding-left: $newSize;
+    }
+    .pr-#{$size} {
+        padding-right: $newSize;
+    }
+    .px-#{$size} {
+        padding-right: $newSize;
+        padding-left: $newSize;
+    }
+    .py-#{$size} {
+        padding-top: $newSize;
+        padding-bottom: $newSize;
+    }
+
+    // margins
+    .m-#{$size} {
+        margin: $newSize;
+    }
+    .mt-#{$size} {
+        margin-top: $newSize;
+    }
+    .mb-#{$size} {
+        margin-bottom: $newSize;
+    }
+    .ml-#{$size} {
+        margin-left: $newSize;
+    }
+    .mr-#{$size} {
+        margin-right: $newSize;
+    }
+    .mx-#{$size} {
+        margin-right: $newSize;
+        margin-left: $newSize;
+    }
+    .my-#{$size} {
+        margin-top: $newSize;
+        margin-bottom: $newSize;
+    }
+}

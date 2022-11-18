@@ -1,0 +1,8 @@
+.qds-button {
+    &--neutral {
+        background-color: $neutral-100;
+        padding: 0.30rem 0.80rem;
+        @extend .text-sm;
+        border-radius: 25px;
+    }
+}

@@ -1,0 +1,33 @@
+@function toRem($value) {
+    $newVal: calc($value / 16);
+    @return $newVal + rem;
+}
+
+@mixin flex($direction: 'row', $justifyContent: '', $alignItems: '') {
+    display: flex;
+    flex-direction: #{$direction};
+    
+    @if($justifyContent) {
+        justify-content: #{$justifyContent};
+    }
+    @if($alignItems) {
+        align-items: #{$alignItems};
+    }
+}
+
+@mixin set-padding($value, $position: 'all') {
+    @if $position == 'all' {
+        padding: toRem($value);
+    } 
+    @else if $position == 'y' {
+        padding-top: toRem($value);
+        padding-bottom: toRem($value);
+    } 
+    @else if $position == 'x' {
+        padding-left: toRem($value);
+        padding-right: toRem($value);
+    } 
+    @else {
+        padding-#{$position}:  toRem($value);
+    }
+}
