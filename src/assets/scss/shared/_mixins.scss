@@ -31,3 +31,39 @@
         padding-#{$position}:  toRem($value);
     }
 }
+
+// TODO: cleanup
+@mixin set-margin($value, $position: 'all') {
+    @if $value == 'auto' {
+        @if $position == 'all' {
+            margin: auto;
+        }
+        @else if $position == 'y' {
+            margin-top: auto;
+            margin-bottom: auto;
+        } 
+        @else if $position == 'x' {
+            margin-left: auto;
+            margin-right: auto;
+        } 
+        @else {
+            margin-#{$position}:  auto;
+        }
+    } 
+    @else {
+        @if $position == 'all' {
+            margin: toRem($value);
+        }
+        @else if $position == 'y' {
+            margin-top: toRem($value);
+            margin-bottom: toRem($value);
+        } 
+        @else if $position == 'x' {
+            margin-left: toRem($value);
+            margin-right: toRem($value);
+        } 
+        @else {
+            margin-#{$position}:  toRem($value);
+        }
+    }
+}

@@ -28,6 +28,8 @@
     }
 }
 
+//TODO: move
+
 .bottom-nav {
     padding: 1rem;
     background-color: $neutral-50;
@@ -38,6 +40,8 @@
     &__links {
         list-style: none;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
+        max-width: 50rem;
+        @include set-margin('auto', 'x');
     }
 }

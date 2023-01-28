@@ -1,0 +1,16 @@
+.qds-o-modal {
+    $parent: &;
+
+    &__block {
+        background-color: $white;
+        max-height: calc(80% - 1px);
+        max-width: 50rem;
+        min-width: 38rem;
+        border-radius: 5px;
+
+        #{$parent}__content {
+            @include set-padding(40, 'y');
+            @include set-padding(32, 'x');
+        }
+    }
+}

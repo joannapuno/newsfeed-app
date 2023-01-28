@@ -1,15 +1,17 @@
-import TopNav from 'Layout/TopNav/TopNav'
-import BottomNav from 'Layout/BottomNav/BottomNav'
-import QuackFeed from 'components/QuackFeed';
+import React, { Component } from 'react'
+import { TopNav, BottomNav } from 'Layout'
+import { QuackFeed } from 'components';
 
-function App() {
+class App extends Component{
+ render() {
   return (
     <div className="app">
-     <TopNav />
-     <QuackFeed />
-     <BottomNav />
+      <TopNav />
+      <QuackFeed />
+      <BottomNav />
     </div>
-  );
+  )
+ }
 }
 
 export default App;
