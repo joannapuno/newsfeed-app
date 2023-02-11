@@ -8,7 +8,7 @@ const bottomNav = document.getElementById('bottom-nav');
 
 
 //App Opening Sequence
-setTimeout(function() { 
+setTimeout(function () {
     appOpeningView.classList.add('hide');
 }, 2000);
 
@@ -17,18 +17,18 @@ const toggleBackdropHandler = component => {
     backdrop.style.display = backdrop.style.display === 'block' ? 'none' : 'block';
 
     // Determine where backdrop is being called
-    switch(component) {
-        case 'addpost': 
+    switch (component) {
+        case 'addpost':
             backdrop.onclick = evt => {
                 toggleAddPostFieldHandler();
             };
             break;
         case 'menu':
-            backdrop.onclick = evt => { 
+            backdrop.onclick = evt => {
                 toggleSideDrawerHandler();
             }
             break;
-        
+
         default:
             backdrop.style.display === 'none';
     }
@@ -51,7 +51,7 @@ const publishPostBtn = document.getElementById('publish-post-btn');
 // Toggle Input Field + Bottom Nav when Clicking Add
 const toggleAddPostFieldHandler = () => {
     toggleBackdropHandler('addpost');
-    
+
     if (!newPostBox.classList.contains('show')) {
         bottomNav.classList.add('hide');
         newPostBox.classList.add('show');
@@ -64,12 +64,12 @@ dismissAddNewBtn.addEventListener('click', toggleAddPostFieldHandler, false);
 
 // Show Input Field for New post
 const showAddNewFormHandler = () => {
-    let previewImages = document.querySelector('.new-post-caption').querySelector('.attached-files-container');
+    let previewImages = document.querySelector('.new-post-caption .attached-files-container');
     toggleAddPostFieldHandler();
 
     //Reset Form + remove attached images
     newPostForm.reset();
-    previewImages != null ? previewImages.remove() : null;
+    if (previewImages) previewImages.remove()
     publishPostBtn.disabled = true;
 
     // Disable Publish button depending on Input
@@ -102,7 +102,7 @@ const createNewPostHandler = formData => {
 
     // Like - Available Card action
     const likeBtn = card_c.querySelector('.like-btn');
-    const likeCounts = card_c.querySelector('.likes').querySelector('.count');
+    const likeCounts = card_c.querySelector('.likes .count');
 
     // Apply Received Form Data
     dateStamp.innerText = formData.date;
@@ -126,11 +126,11 @@ const createNewPostHandler = formData => {
 
     // Add Click on Like icon after append
     likeBtn.addEventListener('click', evt => {
-        toggleLikeBtnHandler(likeBtn,likeCounts);
+        toggleLikeBtnHandler(likeBtn, likeCounts);
     }, false);
 
     //Highlight newly added Quack
-    setTimeout(function() { 
+    setTimeout(function () {
         card_c.classList.add('no-highlight');
     }, 1000);
 
@@ -141,7 +141,7 @@ publishPostBtn.addEventListener('click', evt => {
     evt.preventDefault();
 
     const todayDate = new Date();
-    const dateFormatted = todayDate.toLocaleString('default',{ month: 'long', day: 'numeric', year: 'numeric' });
+    const dateFormatted = todayDate.toLocaleString('default', { month: 'long', day: 'numeric', year: 'numeric' });
     let formData = new FormData();
 
     formData.caption = newPostCaption.value;
@@ -159,8 +159,8 @@ publishPostBtn.addEventListener('click', evt => {
 
 // Create URL Source for Images and return
 const createImgSrcHandler = files => {
-    let previewImages = document.querySelector('.new-post-caption').querySelector('.attached-files-container');
-    previewImages != null ? previewImages.remove() : null;
+    let previewImages = document.querySelector('.new-post-caption .attached-files-container');
+    if (previewImages) previewImages.remove()
 
     let attachmentContainer = document.createElement('div');
     attachmentContainer.classList.add('attached-files-container');
@@ -183,7 +183,7 @@ const createImgSrcHandler = files => {
 const toggleLikeBtnHandler = (icon, countEl) => {
     let countText = Number(countEl.innerText);
 
-    if(icon.classList.contains('liked')) {
+    if (icon.classList.contains('liked')) {
         icon.classList.remove('liked');
         countText--;
     } else {
@@ -206,7 +206,7 @@ const customizeEls = document.getElementsByClassName('changeable-item');
 const toggleSideDrawerHandler = () => {
     toggleBackdropHandler('menu');
 
-    if(sideDrawer.classList.contains('open')) {
+    if (sideDrawer.classList.contains('open')) {
         sideDrawer.classList.remove('open')
         sideDrawer.classList.add('close')
     } else {
@@ -218,8 +218,8 @@ sideDrawerToggle.addEventListener('click', toggleSideDrawerHandler, false);
 
 // ************************* Toggle Dark Mode ************************* //
 const toggleModeHandler = () => {
-    for(let el of customizeEls) {
-        if(el.classList.contains('dark-mode')) {
+    for (let el of customizeEls) {
+        if (el.classList.contains('dark-mode')) {
             el.classList.remove('dark-mode');
         } else {
             el.classList.add('dark-mode');
