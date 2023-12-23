@@ -1,4 +1,9 @@
 ***Welcome to QUACK It! App**
+This was an accepted entry for a challenge to create a social media web app using only vanilla JS. Mandatory functionalities:
+- Be able to create a post
+- The post must be able to accept text, an image, or both
+
+Link -> joannapuno.github.io/quack-it-app/
 
 ***Here are the current functionalities you can do with the App:**
 
@@ -15,7 +20,3 @@ Added Card
 Clicking Backdrop
 - Close Side Drawer
 - Close Add Post Input Field
-
-***Some things I’ve noticed that I’d like to fix:**
-- Add Button “+” icon not vertically entered on Safari browsers
-- At times, the Dark Mode toggle gets “un-toggled”. I haven’t been able to re-create this bug, but if you do, please let me know the steps you did to re-create it. 
