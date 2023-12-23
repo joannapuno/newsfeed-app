@@ -1,5 +1,8 @@
 ***Welcome to QUACK It! App**
-This was an accepted entry for a challenge to create a social media web app using only vanilla JS. Mandatory functionalities:
+
+This was an accepted entry for a challenge to create a social media web app using only vanilla JS. 
+
+Mandatory functionalities:
 - Be able to create a post
 - The post must be able to accept text, an image, or both
 
